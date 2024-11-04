@@ -2,21 +2,15 @@ using UnityEngine;
 
 public class CameraController: MonoBehaviour
 {
-	public GameManager _gm;
-	int zz = -10;
 	public float standSize = 4;
 	public float zoomSize = 8;
 
-
-	void Start()
+	public void zoomIn()
 	{
 		gameObject.GetComponent<Camera>().orthographicSize = standSize;
 	}
-
-	void Update()
+	public void zoomOut()
 	{
-		transform.position = new Vector3(_gm.posX, _gm.posY, zz);
-		//	gameObject.GetComponent<Camera>().orthographicSize = zoomSize;
-
+		gameObject.GetComponent<Camera>().orthographicSize = zoomSize;
 	}
 }
