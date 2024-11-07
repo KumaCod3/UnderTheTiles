@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class BoardManager: MonoBehaviour
 {
+	public static int zom;
 	public baseCarta[] riga0 = new baseCarta[7];
 	public baseCarta[] riga1 = new baseCarta[7];
 	public baseCarta[] riga2 = new baseCarta[7];
@@ -28,10 +29,15 @@ public class BoardManager: MonoBehaviour
 			for (int x = 0; x < scacchiera[0].Length; x++)
 			{
 				if (scacchiera[y][x])
+				{
 					scacchiera[y][x].disegna(x, y);
+					zom = x + 1;
+				}
 				else
+				{
 					scacchiera[y][x] = vuota;
-
+					scacchiera[y][x].disegna(x, y);
+				}
 			}
 
 		}
