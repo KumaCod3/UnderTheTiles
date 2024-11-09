@@ -36,7 +36,7 @@ public class PopinoController: MonoBehaviour
 
 	private void moveLeft()
 	{
-		//	Debug.Log("da " + posX + "," + posY + " a " + (posX - 1) + "," + posY + BoardManager.check(posX - 1, posY));
+		Debug.Log("da " + posX + "," + posY + " a " + (posX - 1) + "," + posY + BoardManager.check(posX - 1, posY));
 		if (BoardManager.check(posX - 1, posY))
 		{
 			moveTo(posX - 1, posY);
@@ -44,7 +44,7 @@ public class PopinoController: MonoBehaviour
 	}
 	private void moveRight()
 	{
-		//	Debug.Log("da " + posX + "," + posY + " a " + (posX + 1) + "," + posY + BoardManager.check(posX + 1, posY));
+		Debug.Log("da " + posX + "," + posY + " a " + (posX + 1) + "," + posY + BoardManager.check(posX + 1, posY));
 		if (BoardManager.check(posX + 1, posY))
 		{
 			moveTo(posX + 1, posY);
@@ -52,7 +52,7 @@ public class PopinoController: MonoBehaviour
 	}
 	private void moveDown()
 	{
-		//	Debug.Log("da " + posX + "," + posY + " a " + (posX) + "," + (posY - 1) + BoardManager.check(posX, posY - 1));
+		Debug.Log("da " + posX + "," + posY + " a " + (posX) + "," + (posY - 1) + BoardManager.check(posX, posY - 1));
 		if (BoardManager.check(posX, posY - 1))
 		{
 			moveTo(posX, posY - 1);
@@ -60,7 +60,7 @@ public class PopinoController: MonoBehaviour
 	}
 	private void moveUp()
 	{
-		//	Debug.Log("da " + posX + "," + posY + " a " + (posX) + "," + (posY + 1) + BoardManager.check(posX, posY + 1));
+		Debug.Log("da " + posX + "," + posY + " a " + (posX) + "," + (posY + 1) + BoardManager.check(posX, posY + 1));
 		if (BoardManager.check(posX, posY + 1))
 		{
 			moveTo(posX, posY + 1);
