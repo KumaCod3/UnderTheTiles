@@ -34,7 +34,7 @@ public class PopinoController: MonoBehaviour
 		posY = y;
 	}
 
-	private void moveLeft()
+	private void moveDown()
 	{
 		Debug.Log("da " + posX + "," + posY + " a " + (posX - 1) + "," + posY + BoardManager.check(posX - 1, posY));
 		if (BoardManager.check(posX - 1, posY))
@@ -42,7 +42,7 @@ public class PopinoController: MonoBehaviour
 			moveTo(posX - 1, posY);
 		}
 	}
-	private void moveRight()
+	private void moveUp()
 	{
 		Debug.Log("da " + posX + "," + posY + " a " + (posX + 1) + "," + posY + BoardManager.check(posX + 1, posY));
 		if (BoardManager.check(posX + 1, posY))
@@ -50,7 +50,7 @@ public class PopinoController: MonoBehaviour
 			moveTo(posX + 1, posY);
 		}
 	}
-	private void moveDown()
+	private void moveLeft()
 	{
 		Debug.Log("da " + posX + "," + posY + " a " + (posX) + "," + (posY - 1) + BoardManager.check(posX, posY - 1));
 		if (BoardManager.check(posX, posY - 1))
@@ -58,7 +58,7 @@ public class PopinoController: MonoBehaviour
 			moveTo(posX, posY - 1);
 		}
 	}
-	private void moveUp()
+	private void moveRight()
 	{
 		Debug.Log("da " + posX + "," + posY + " a " + (posX) + "," + (posY + 1) + BoardManager.check(posX, posY + 1));
 		if (BoardManager.check(posX, posY + 1))
@@ -68,6 +68,6 @@ public class PopinoController: MonoBehaviour
 	}
 	static public void moveTo(int x, int y)
 	{
-
+		BoardManager.scacchiera[x][y].action();
 	}
 }
