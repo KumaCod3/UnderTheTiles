@@ -10,7 +10,7 @@ public class BoardManager: MonoBehaviour
 	public baseCarta[] riga4 = new baseCarta[7];
 	public baseCarta[] riga5 = new baseCarta[7];
 	public baseCarta[] riga6 = new baseCarta[7];
-	private baseCarta[][] scacchiera = new baseCarta[7][];
+	static public baseCarta[][] scacchiera = new baseCarta[7][];
 	public baseCarta vuota;
 
 
@@ -28,18 +28,28 @@ public class BoardManager: MonoBehaviour
 		{
 			for (int x = 0; x < scacchiera[0].Length; x++)
 			{
-				if (scacchiera[y][x])
+				if (scacchiera[x][y])
 				{
-					scacchiera[y][x].disegna(x, y);
-					zom = x + 1;
+					scacchiera[x][y].disegna(y, x);
+					zom = y + 1;
 				}
 				else
 				{
-					scacchiera[y][x] = vuota;
-					scacchiera[y][x].disegna(x, y);
+					scacchiera[x][y] = vuota;
+					scacchiera[x][y].disegna(y, x);
 				}
 			}
 
 		}
 	}
+	static public bool check(int x, int y)
+	{
+		if (x >= scacchiera.Length || y >= scacchiera[0].Length || x < 0 || y < 0)
+		{
+			Debug.Log("OUT");
+			return false;
+		}
+		return !scacchiera[x][y].GetComponent<Vuota>();
+	}
+
 }

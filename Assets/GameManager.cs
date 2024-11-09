@@ -8,4 +8,17 @@ public class GameManager: MonoBehaviour
 	{
 		punti = 0;
 	}
+	// fai click mouse su board!
+	/*
+	 * arrotonda a x,y
+	 * 
+	 * poi:
+	   if (BoardManager.check(posX - 1, posY))
+		{
+			PopinoController.moveTo(posX - 1, posY);
+		}
+
+	*/
+
+
 }
