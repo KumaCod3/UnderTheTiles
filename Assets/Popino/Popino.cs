@@ -1,6 +1,7 @@
 using UnityEngine;
 public class Popino: baseCarta
 {
+
 	public override void action()
 	{
 		base.action();
@@ -9,6 +10,9 @@ public class Popino: baseCarta
 	private void Update()
 	{
 		gameObject.GetComponent<GestCarta>().cambia4("" + GameManager.punti);
+		gameObject.GetComponent<GestCarta>().cambia1("" + PopinoController.vita);
+		gameObject.GetComponent<GestCarta>().cambia2("" + PopinoController.attacco);
+
 	}
 	public override void disegna(int x, int y)
 	{

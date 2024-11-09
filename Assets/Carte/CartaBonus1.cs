@@ -1,11 +1,20 @@
+using UnityEngine;
 public class CartaBonus1: baseCarta
 {
-	public int punti;
+	public int attacco;
+
+	private void Start()
+	{
+		gameObject.GetComponent<GestCarta>().cambia2("+" + attacco);
+		gameObject.GetComponent<GestCarta>().cambia4("+1");
+	}
+
 	public override void action()
 	{
 		base.action();
-		//GameManager.punti = GameManager.punti + punti;
-		//Debug.Log("Bonus preso");
-		//Destroy(gameObject);
+		PopinoController.attacco += attacco;
+		GameManager.punti += 1;
+		Debug.Log("Bonus preso");
+		Destroy(gameObject);
 	}
 }
