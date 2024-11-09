@@ -181,16 +181,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   riga0:
-  - {fileID: 2795563588853961843, guid: 5c976b77f41c8e54aaa3f4c6d741240b, type: 3}
-  - {fileID: 3379278064248604569, guid: 3b7ed78f46862f44fa0a368c03bf36c4, type: 3}
+  - {fileID: 5901437902140358246, guid: 5d6fadff1e46bfb419cc9dc702654b11, type: 3}
+  - {fileID: 8467484249169421452, guid: 240a3e5e86841b343a506dcface2ce1f, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   riga1:
-  - {fileID: 8957456636160523698, guid: c35ab015182a8b849bf8056c0bb291a6, type: 3}
-  - {fileID: 5129917249345789822, guid: fbaddd88fd6b41e4785254533f0e3f28, type: 3}
+  - {fileID: 267688658940180682, guid: 4804328cfcce10e4b9bd37264ab219e6, type: 3}
+  - {fileID: 430145880208065416, guid: 4931ed1dd2feb194291f8fa82a1e744b, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -236,7 +236,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  vuota: {fileID: 5776630745840619433, guid: 3896c4772843c214292e60c9c31fcb66, type: 3}
+  vuota: {fileID: 7988489524255852010, guid: 3896c4772843c214292e60c9c31fcb66, type: 3}
+  usata: {fileID: 7988489524255852010, guid: 27b68574e06cc9b4ebc5eef05e18717d, type: 3}
 --- !u!1 &285852393
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,7 +367,7 @@ Transform:
   - {fileID: 1701797798}
   - {fileID: 285852394}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &429974041
 GameObject:
@@ -452,6 +453,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &511644742
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 511644743}
+  m_Layer: 0
+  m_Name: Vuote
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &511644743
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511644742}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.615448, y: 1.8231376, z: -0.05489809}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,7 +567,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &519420033
 MonoBehaviour:
@@ -886,6 +918,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1027751669
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1027751670}
+  m_Layer: 0
+  m_Name: Caselle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1027751670
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027751669}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.615448, y: 1.8231376, z: -0.05489809}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1469953577
 GameObject:
   m_ObjectHideFlags: 0

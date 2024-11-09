@@ -6,6 +6,9 @@ public class CartaMostro1: baseCarta
 	public override void action()
 	{
 		base.action();
+
+		GameManager.punti += 5;
+
 		//while (vita > 0 && PopinoController.vita > 0)
 		//{
 		//	vita = vita - PopinoController.attacco;

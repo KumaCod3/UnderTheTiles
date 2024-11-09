@@ -7,12 +7,13 @@ public abstract class baseCarta: MonoBehaviour
 		Debug.Log("azione di: " + gameObject.name);
 	}
 
-	public void disegna(int x, int y)
+	public virtual void disegna(int x, int y)
 	{
-		Instantiate(gameObject, new Vector3(x, y, 0), new Quaternion(0, 0, 0, 0));
+		GameObject card = Instantiate(gameObject, new Vector3(x, y, 0), new Quaternion(0, 0, 0, 0), GameObject.Find("/Caselle").transform);
 		if (gameObject.GetComponent<PopinoController>())
 		{
 			gameObject.GetComponent<PopinoController>().setXY(x, y);
 		}
+		BoardManager.assegna(card, y, x);
 	}
 }

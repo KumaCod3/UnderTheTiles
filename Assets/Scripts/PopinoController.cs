@@ -3,10 +3,11 @@ using UnityEngine;
 public class PopinoController: MonoBehaviour
 {
 	bool inMovimento = false;
-	public int posX;
-	public int posY;
+	public static int posX;
+	public static int posY;
 	public static int attacco = 2;
 	public static int vita = 2;
+
 
 	void Update()
 	{
@@ -32,6 +33,8 @@ public class PopinoController: MonoBehaviour
 	{
 		posX = x;
 		posY = y;
+		GameManager.pino = this;
+		//gameObject.GetComponent<PopinoController>();
 	}
 
 	private void moveDown()
@@ -66,8 +69,19 @@ public class PopinoController: MonoBehaviour
 			moveTo(posX, posY + 1);
 		}
 	}
-	static public void moveTo(int x, int y)
+	public void moveTo(int x, int y)
 	{
-		BoardManager.scacchiera[x][y].action();
+		if (!BoardManager.scacchiera[x][y].GetComponent<CartaUscita>() || BoardManager.scacchiera[x][y].GetComponent<CartaUscita>().costoUscita <= GameManager.punti)
+		{
+			BoardManager.scacchiera[x][y].GetComponent<baseCarta>().action();
+			Destroy(BoardManager.scacchiera[x][y].gameObject);
+			BoardManager.scacchiera[posX][posY] = null;
+			BoardManager.scacchiera[x][y] = BoardManager.pop;
+			//	Debug.Log("muovo da " + transform.position);
+			BoardManager.scacchiera[x][y].transform.position = new Vector3(y, x, 0);
+			//Debug.Log(gameObject.name + " a " + transform.position);
+			posX = x;
+			posY = y;
+		}
 	}
 }

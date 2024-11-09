@@ -3,16 +3,17 @@ using UnityEngine;
 public class BoardManager: MonoBehaviour
 {
 	public static int zom;
-	public baseCarta[] riga0 = new baseCarta[7];
-	public baseCarta[] riga1 = new baseCarta[7];
-	public baseCarta[] riga2 = new baseCarta[7];
-	public baseCarta[] riga3 = new baseCarta[7];
-	public baseCarta[] riga4 = new baseCarta[7];
-	public baseCarta[] riga5 = new baseCarta[7];
-	public baseCarta[] riga6 = new baseCarta[7];
-	static public baseCarta[][] scacchiera = new baseCarta[7][];
-	public baseCarta vuota;
-
+	public GameObject[] riga0 = new GameObject[7];
+	public GameObject[] riga1 = new GameObject[7];
+	public GameObject[] riga2 = new GameObject[7];
+	public GameObject[] riga3 = new GameObject[7];
+	public GameObject[] riga4 = new GameObject[7];
+	public GameObject[] riga5 = new GameObject[7];
+	public GameObject[] riga6 = new GameObject[7];
+	static public GameObject[][] scacchiera = new GameObject[7][];
+	public GameObject vuota;
+	public GameObject usata;
+	public static GameObject pop;
 
 	private void Start()
 	{
@@ -30,26 +31,57 @@ public class BoardManager: MonoBehaviour
 			{
 				if (scacchiera[x][y])
 				{
-					scacchiera[x][y].disegna(y, x);
+					scacchiera[x][y].GetComponent<baseCarta>().disegna(y, x);
 					zom = y + 1;
 				}
 				else
 				{
 					scacchiera[x][y] = vuota;
-					scacchiera[x][y].disegna(y, x);
+					scacchiera[x][y].GetComponent<baseCarta>().disegna(y, x);
 				}
 			}
 
 		}
 	}
+
+	private void Update()
+	{
+		riempi();
+	}
 	static public bool check(int x, int y)
 	{
-		if (x >= scacchiera.Length || y >= scacchiera[0].Length || x < 0 || y < 0)
+		if (x >= scacchiera.Length || y >= scacchiera[0].Length || x < 0 || y < 0 || scacchiera[x][y].GetComponent<Vuota>())    // se fuori scacchiera
 		{
-			Debug.Log("OUT");
 			return false;
 		}
-		return !scacchiera[x][y].GetComponent<Vuota>();
+		int xD = Mathf.Abs(PopinoController.posX - x);
+		int yD = Mathf.Abs(PopinoController.posY - y);
+		if (xD + yD != 1)   // se non adiacente
+		{
+			return false;
+		}
+		return true;
 	}
 
+	public static void assegna(GameObject card, int x, int y)
+	{
+		scacchiera[x][y] = card;
+	}
+	public void riempi()
+	{
+		for (int y = 0; y < scacchiera.Length; y++)
+		{
+			for (int x = 0; x < scacchiera[0].Length; x++)
+			{
+				if (!scacchiera[x][y])
+				{
+
+					scacchiera[x][y] = usata;
+					scacchiera[x][y].GetComponent<baseCarta>().disegna(y, x);
+				}
+			}
+
+		}
+
+	}
 }
