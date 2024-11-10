@@ -4,6 +4,7 @@ public class Usata: baseCarta
 	private void Start()
 	{
 		gameObject.GetComponent<GestCarta>().cambia4("-" + costo);
+		descrizione = "usata";
 	}
 	public override void action()
 	{

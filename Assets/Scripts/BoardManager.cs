@@ -62,6 +62,16 @@ public class BoardManager: MonoBehaviour
 		}
 		return true;
 	}
+	static public bool checkLim(int x, int y)
+	{
+		if (x >= scacchiera.Length || y >= scacchiera[0].Length || x < 0 || y < 0 || scacchiera[x][y].GetComponent<Vuota>())    // se fuori scacchiera
+		{
+			return false;
+		}
+		return true;
+	}
+
+
 
 	public static void assegna(GameObject card, int x, int y)
 	{
@@ -83,5 +93,10 @@ public class BoardManager: MonoBehaviour
 
 		}
 
+	}
+
+	public static GameObject sopraCarta(int x, int y)
+	{
+		return scacchiera[x][y];
 	}
 }

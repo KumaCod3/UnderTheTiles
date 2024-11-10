@@ -4,6 +4,7 @@ public class GameManager: MonoBehaviour
 {
 	public static int punti;
 	public static PopinoController pino;
+	public InGameManager _IGM;
 
 	private void Start()
 	{
@@ -16,11 +17,18 @@ public class GameManager: MonoBehaviour
 		{
 			punti = 0;
 		}
+
+		Vector3 cor = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		int xx = Mathf.RoundToInt(cor.x);
+		int yy = Mathf.RoundToInt(cor.y);
+		if (BoardManager.checkLim(yy, xx) && BoardManager.sopraCarta(yy, xx).GetComponent<baseCarta>())
+		{
+			string desc = BoardManager.sopraCarta(yy, xx).GetComponent<baseCarta>().descrizione;
+			_IGM.setDesc(desc);
+		}
+
 		if (Input.GetKeyDown(KeyCode.Mouse0))
 		{
-			Vector3 cor = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			int xx = Mathf.RoundToInt(cor.x);
-			int yy = Mathf.RoundToInt(cor.y);
 			if (BoardManager.check(yy, xx))
 			{
 				pino.moveTo(yy, xx);

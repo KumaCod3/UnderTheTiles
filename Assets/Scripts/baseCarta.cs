@@ -2,6 +2,7 @@ using UnityEngine;
 
 public abstract class baseCarta: MonoBehaviour
 {
+	public string descrizione;
 	public virtual void action()
 	{
 		Debug.Log("azione di: " + gameObject.name);

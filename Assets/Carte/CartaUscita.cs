@@ -6,6 +6,7 @@ public class CartaUscita: baseCarta
 	private void Start()
 	{
 		gameObject.GetComponent<GestCarta>().cambia3("" + costoUscita);
+		descrizione = "uscita";
 	}
 
 	private void Update()

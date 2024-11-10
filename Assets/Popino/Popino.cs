@@ -2,6 +2,10 @@ using UnityEngine;
 public class Popino: baseCarta
 {
 
+	private void Start()
+	{
+		descrizione = "tu";
+	}
 	public override void action()
 	{
 		base.action();

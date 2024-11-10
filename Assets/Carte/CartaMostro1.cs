@@ -5,6 +5,10 @@ public class CartaMostro1: baseCarta
 	public int vita;
 	public int attacco;
 
+	private void Start()
+	{
+		descrizione = "mostro";
+	}
 	private void Update()
 	{
 		gameObject.GetComponent<GestCarta>().cambia1("" + vita);
