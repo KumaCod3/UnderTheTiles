@@ -6,7 +6,9 @@ public class CartaUscita: baseCarta
 	private void Start()
 	{
 		gameObject.GetComponent<GestCarta>().cambia3("" + costoUscita);
-		descrizione = "uscita";
+		tipo = "movimento";
+		nome = "Uscita";
+		descrizione = "Per vincere il livello, vieni qui.";
 	}
 
 	private void Update()

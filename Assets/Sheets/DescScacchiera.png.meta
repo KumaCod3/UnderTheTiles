@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 85460cb55c72e6a4193d4784f6003b92
+guid: 31bb63c89db6f32429686e5985de1ff5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,14 +43,14 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 1
+  spriteExtrude: 0
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 180
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
-  alphaUsage: 2
+  alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
@@ -141,13 +141,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sfumature_0
+      name: DescScacchiera_0
       rect:
         serializedVersion: 2
-        x: 20
-        y: 13
-        width: 140
-        height: 140
+        x: 10
+        y: 3
+        width: 285
+        height: 562
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,8 +155,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8552fe793c22373489e87e7ecc632296
-      internalID: 1347105655
+      spriteID: 6548d3450a5e5c249913dab159e880f3
+      internalID: 2125854310
       vertices: []
       indices: 
       edges: []
@@ -172,7 +172,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      sfumature_0: 1347105655
+      DescScacchiera_0: 2125854310
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -7,7 +7,9 @@ public class CartaMostro1: baseCarta
 
 	private void Start()
 	{
-		descrizione = "mostro";
+		tipo = "nemico";
+		nome = "Mostro 1";
+		descrizione = "Se mi uccidi guadagi punti.";
 	}
 	private void Update()
 	{

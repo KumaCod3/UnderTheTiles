@@ -4,7 +4,9 @@ public class Popino: baseCarta
 
 	private void Start()
 	{
-		descrizione = "tu";
+		tipo = "TU";
+		nome = "TU";
+		descrizione = "Tu.";
 	}
 	public override void action()
 	{

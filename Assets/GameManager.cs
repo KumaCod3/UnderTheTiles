@@ -23,8 +23,10 @@ public class GameManager: MonoBehaviour
 		int yy = Mathf.RoundToInt(cor.y);
 		if (BoardManager.checkLim(yy, xx) && BoardManager.sopraCarta(yy, xx).GetComponent<baseCarta>())
 		{
+			string tip = BoardManager.sopraCarta(yy, xx).GetComponent<baseCarta>().tipo;
+			string nom = BoardManager.sopraCarta(yy, xx).GetComponent<baseCarta>().nome;
 			string desc = BoardManager.sopraCarta(yy, xx).GetComponent<baseCarta>().descrizione;
-			_IGM.setDesc(desc);
+			_IGM.setDesc(tip, nom, desc);
 		}
 
 		if (Input.GetKeyDown(KeyCode.Mouse0))

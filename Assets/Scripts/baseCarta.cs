@@ -2,6 +2,8 @@ using UnityEngine;
 
 public abstract class baseCarta: MonoBehaviour
 {
+	public string tipo;
+	public string nome;
 	public string descrizione;
 	public virtual void action()
 	{

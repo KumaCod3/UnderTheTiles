@@ -7,7 +7,9 @@ public class CartaBonus1: baseCarta
 	{
 		gameObject.GetComponent<GestCarta>().cambia2("+" + attacco);
 		gameObject.GetComponent<GestCarta>().cambia4("+1");
-		descrizione = "bonus";
+		tipo = "bonus";
+		nome = "Pozione Attacco";
+		descrizione = "Guadagni 1 punto attacco e 1 punto movimento.";
 	}
 
 	public override void action()
