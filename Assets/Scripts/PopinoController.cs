@@ -10,29 +10,63 @@ public class PopinoController: MonoBehaviour
 
 	void Update()
 	{
-		if (vita <= 0)
+		/*
+		if (Input.anyKeyDown)
 		{
-			Debug.Log("GAME OVEEEEER!!!!");
-			Destroy(gameObject);
-		}
-		if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
+			if (bloccato())
+			{
+				vita = 0;
+			}
+		}*/
+		if (!GameManager.pausa)
 		{
-			moveLeft();
-		}
-		if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
-		{
-			moveRight();
-		}
-		if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
-		{
-			moveDown();
-		}
-		if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
-		{
-			moveUp();
+
+			if (vita <= 0)
+			{
+				Debug.Log("GAME OVEEEEER!!!!");
+				Destroy(gameObject);
+			}
+			if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
+			{
+				moveLeft();
+			}
+			if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
+			{
+				moveRight();
+			}
+			if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+			{
+				moveDown();
+			}
+			if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+			{
+				moveUp();
+			}
 		}
 	}
 
+	private bool bloccato()
+	{
+		bool bl = true;
+		if (BoardManager.check(posX - 1, posY))
+		{
+			if (BoardManager.scacchiera[posX - 1][posY].GetComponent<CartaUscita>() || BoardManager.scacchiera[posX - 1][posY].GetComponent<Usata>())
+			{
+
+			}
+		}
+		if (BoardManager.check(posX + 1, posY))
+		{
+		}
+		if (BoardManager.check(posX, posY - 1))
+		{
+		}
+		if (BoardManager.check(posX, posY + 1))
+		{
+		}
+
+		return bl;
+	}
 	internal void setXY(int x, int y)
 	{
 		posX = x;
