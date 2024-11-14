@@ -10,20 +10,21 @@ public class PopinoController: MonoBehaviour
 
 	void Update()
 	{
-		/*
-		if (Input.anyKeyDown)
-		{
-			if (bloccato())
-			{
-				vita = 0;
-			}
-		}*/
 		if (!GameManager.pausa)
 		{
-
+			if (Input.anyKeyDown)
+			{
+				if (bloccato())
+				{
+					Debug.Log("BLOCCATOOOO");
+					vita = 0;
+					GameManager.pausa = true;
+				}
+			}
 			if (vita <= 0)
 			{
 				Debug.Log("GAME OVEEEEER!!!!");
+				GameManager.pausa = true;
 				Destroy(gameObject);
 			}
 			if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
@@ -50,19 +51,43 @@ public class PopinoController: MonoBehaviour
 		bool bl = true;
 		if (BoardManager.check(posX - 1, posY))
 		{
-			if (BoardManager.scacchiera[posX - 1][posY].GetComponent<CartaUscita>() || BoardManager.scacchiera[posX - 1][posY].GetComponent<Usata>())
+			if (!BoardManager.scacchiera[posX - 1][posY].GetComponent<CartaUscita>() || BoardManager.scacchiera[posX - 1][posY].GetComponent<CartaUscita>().costoUscita <= GameManager.punti)
 			{
-
+				if (!BoardManager.scacchiera[posX - 1][posY].GetComponent<Usata>() || GameManager.punti >= BoardManager.scacchiera[posX - 1][posY].GetComponent<Usata>().costo)
+				{
+					return false;
+				}
 			}
 		}
 		if (BoardManager.check(posX + 1, posY))
 		{
+			if (!BoardManager.scacchiera[posX + 1][posY].GetComponent<CartaUscita>() || BoardManager.scacchiera[posX + 1][posY].GetComponent<CartaUscita>().costoUscita <= GameManager.punti)
+			{
+				if (!BoardManager.scacchiera[posX + 1][posY].GetComponent<Usata>() || GameManager.punti >= BoardManager.scacchiera[posX + 1][posY].GetComponent<Usata>().costo)
+				{
+					return false;
+				}
+			}
 		}
 		if (BoardManager.check(posX, posY - 1))
 		{
+			if (!BoardManager.scacchiera[posX][posY - 1].GetComponent<CartaUscita>() || BoardManager.scacchiera[posX][posY - 1].GetComponent<CartaUscita>().costoUscita <= GameManager.punti)
+			{
+				if (!BoardManager.scacchiera[posX][posY - 1].GetComponent<Usata>() || GameManager.punti >= BoardManager.scacchiera[posX][posY - 1].GetComponent<Usata>().costo)
+				{
+					return false;
+				}
+			}
 		}
 		if (BoardManager.check(posX, posY + 1))
 		{
+			if (!BoardManager.scacchiera[posX][posY + 1].GetComponent<CartaUscita>() || BoardManager.scacchiera[posX][posY + 1].GetComponent<CartaUscita>().costoUscita <= GameManager.punti)
+			{
+				if (!BoardManager.scacchiera[posX][posY + 1].GetComponent<Usata>() || GameManager.punti >= BoardManager.scacchiera[posX][posY + 1].GetComponent<Usata>().costo)
+				{
+					return false;
+				}
+			}
 		}
 
 		return bl;

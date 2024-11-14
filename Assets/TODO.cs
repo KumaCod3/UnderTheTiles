@@ -3,7 +3,18 @@ using UnityEngine;
 public class TODO: MonoBehaviour
 {
 	/*
-	 * giva up quando bloccato
+	 * fai pausa bene in gamemanager
+	 * 
+	 * fai altri mostri/ bonus
+	 * 
+	 * sistema salvataggio e levelUP
+	 * 
+	 * altre scene
+	 * 
+	 * testi
+	 * 
+	 * 
+	 * audio
 	 * 
 	 * fai svolgimento battaglia
 	 * 

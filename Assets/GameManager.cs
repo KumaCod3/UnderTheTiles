@@ -5,7 +5,7 @@ public class GameManager: MonoBehaviour
 	public static int punti;
 	public static PopinoController pino;
 	public InGameManager _IGM;
-	public static bool pausa = true;
+	static bool inPausa = true;
 
 	private void Start()
 	{
@@ -43,17 +43,12 @@ public class GameManager: MonoBehaviour
 	}
 
 
-	// fai click mouse su board!
-	/*
-	 * arrotonda a x,y
-	 * 
-	 * poi:
-	   if (BoardManager.check(posX - 1, posY))
-		{
-			PopinoController.moveTo(posX - 1, posY);
-		}
-
-	*/
-
-
+	public static void pausa()
+	{
+		inPausa = true;
+	}
+	public static void play()
+	{
+		inPausa = false;
+	}
 }
