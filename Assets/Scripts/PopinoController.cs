@@ -10,7 +10,7 @@ public class PopinoController: MonoBehaviour
 
 	void Update()
 	{
-		if (!GameManager.pausa)
+		if (!GameManager.eInPausa())
 		{
 			if (Input.anyKeyDown)
 			{
@@ -18,13 +18,13 @@ public class PopinoController: MonoBehaviour
 				{
 					Debug.Log("BLOCCATOOOO");
 					vita = 0;
-					GameManager.pausa = true;
+					GameManager.pausa();
 				}
 			}
 			if (vita <= 0)
 			{
 				Debug.Log("GAME OVEEEEER!!!!");
-				GameManager.pausa = true;
+				GameManager.pausa();
 				Destroy(gameObject);
 			}
 			if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))

@@ -1,4 +1,3 @@
-using UnityEngine;
 public class CartaMostro1: baseCarta
 {
 	public int punti;
@@ -29,7 +28,6 @@ public class CartaMostro1: baseCarta
 		if (vita <= 0)
 		{
 			GameManager.punti = GameManager.punti + punti;
-			Debug.Log("mostro battuto");
 			Destroy(gameObject);
 		}
 	}

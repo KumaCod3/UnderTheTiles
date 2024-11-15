@@ -3,15 +3,14 @@ using UnityEngine;
 public class TODO: MonoBehaviour
 {
 	/*
-	 * fai pausa bene in gamemanager
-	 * 
-	 * fai altri mostri/ bonus
-	 * 
 	 * sistema salvataggio e levelUP
 	 * 
+	 * fai altri mostri/ bonus
+	 * 	 
 	 * altre scene
 	 * 
 	 * testi
+	 * 
 	 * 
 	 * 
 	 * audio

@@ -7,7 +7,6 @@ public abstract class baseCarta: MonoBehaviour
 	public string descrizione;
 	public virtual void action()
 	{
-		Debug.Log("azione di: " + gameObject.name);
 	}
 
 	public virtual void disegna(int x, int y)

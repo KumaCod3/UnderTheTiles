@@ -5,7 +5,7 @@ public class GameManager: MonoBehaviour
 	public static int punti;
 	public static PopinoController pino;
 	public InGameManager _IGM;
-	static bool inPausa = true;
+	private static bool inPausa = false;
 
 	private void Start()
 	{
@@ -14,7 +14,7 @@ public class GameManager: MonoBehaviour
 
 	private void Update()
 	{
-		if (!pausa)
+		if (!eInPausa())
 		{
 
 			if (punti < 0)
@@ -42,7 +42,10 @@ public class GameManager: MonoBehaviour
 		}
 	}
 
-
+	public static bool eInPausa()
+	{
+		return inPausa;
+	}
 	public static void pausa()
 	{
 		inPausa = true;

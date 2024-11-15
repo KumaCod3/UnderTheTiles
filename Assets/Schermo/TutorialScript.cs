@@ -7,6 +7,7 @@ public class TutorialScript: MonoBehaviour
 	void Start()
 	{
 		indx = 6;
+		GameManager.pausa();
 	}
 
 	public void segue()
@@ -17,7 +18,7 @@ public class TutorialScript: MonoBehaviour
 	public void inizia()
 	{
 		gameObject.transform.GetChild(indx).gameObject.SetActive(false);
-		GameManager.pausa = false;
+		GameManager.play();
 		gameObject.SetActive(false);
 	}
 }
