@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager: MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class GameManager: MonoBehaviour
 	private void Start()
 	{
 		punti = 0;
+
+
+
 	}
 
 	private void Update()
@@ -53,5 +57,23 @@ public class GameManager: MonoBehaviour
 	public static void play()
 	{
 		inPausa = false;
+	}
+	public void cambiaScema(int x)
+	{
+		PlayerPrefs.SetInt("attacco", PopinoController.attacco);
+		PlayerPrefs.SetInt("vita", PopinoController.vita);
+		PlayerPrefs.SetInt("punti", punti);
+
+
+
+		SceneManager.LoadScene(x);
+	}
+	private void carica()
+	{
+		if (PlayerPrefs.GetInt("attacco") != 0)
+			PopinoController.attacco = PlayerPrefs.GetInt("attacco");
+		if (PlayerPrefs.GetInt("vita") != 0)
+			PopinoController.vita = PlayerPrefs.GetInt("vita");
+		punti = PlayerPrefs.GetInt("punti");
 	}
 }
