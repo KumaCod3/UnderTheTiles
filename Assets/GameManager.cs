@@ -11,9 +11,7 @@ public class GameManager: MonoBehaviour
 	private void Start()
 	{
 		punti = 0;
-
-
-
+		svuotaDesc();
 	}
 
 	private void Update()
@@ -36,6 +34,10 @@ public class GameManager: MonoBehaviour
 				string desc = BoardManager.sopraCarta(yy, xx).GetComponent<baseCarta>().descrizione;
 				_IGM.setDesc(tip, nom, desc);
 			}
+			else
+			{
+				svuotaDesc();
+			}
 			if (Input.GetKeyDown(KeyCode.Mouse0))
 			{
 				if (BoardManager.check(yy, xx))
@@ -46,6 +48,13 @@ public class GameManager: MonoBehaviour
 		}
 	}
 
+	private void svuotaDesc()
+	{
+		string tip = "";
+		string nom = "";
+		string desc = "";
+		_IGM.setDesc(tip, nom, desc);
+	}
 	public static bool eInPausa()
 	{
 		return inPausa;
@@ -63,8 +72,6 @@ public class GameManager: MonoBehaviour
 		PlayerPrefs.SetInt("attacco", PopinoController.attacco);
 		PlayerPrefs.SetInt("vita", PopinoController.vita);
 		PlayerPrefs.SetInt("punti", punti);
-
-
 
 		SceneManager.LoadScene(x);
 	}

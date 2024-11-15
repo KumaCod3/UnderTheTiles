@@ -40,10 +40,8 @@ public class BoardManager: MonoBehaviour
 					scacchiera[x][y].GetComponent<baseCarta>().disegna(y, x);
 				}
 			}
-
 		}
 	}
-
 	private void Update()
 	{
 		riempi();
@@ -70,8 +68,6 @@ public class BoardManager: MonoBehaviour
 		}
 		return true;
 	}
-
-
 
 	public static void assegna(GameObject card, int x, int y)
 	{

@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class PopinoController: MonoBehaviour
 {
 	public static int posX;
