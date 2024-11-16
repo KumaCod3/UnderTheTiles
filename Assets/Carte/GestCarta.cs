@@ -7,12 +7,15 @@ public class GestCarta: MonoBehaviour
 	TextMeshProUGUI BS;
 	TextMeshProUGUI TD;
 	TextMeshProUGUI BD;
+	Animator anim;
+
 	void Start()
 	{
 		TS = gameObject.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
 		BS = gameObject.transform.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>();
 		TD = gameObject.transform.GetChild(0).GetChild(2).GetComponent<TextMeshProUGUI>();
 		BD = gameObject.transform.GetChild(0).GetChild(3).GetComponent<TextMeshProUGUI>();
+		anim = gameObject.GetComponent<Animator>();
 	}
 
 	public void cambia1(string s)
@@ -30,5 +33,11 @@ public class GestCarta: MonoBehaviour
 	public void cambia4(string s)
 	{
 		BD.SetText(s);
+	}
+	public void wiggle()
+	{
+
+		//	gameObject.GetComponent<Animator>()
+		anim.SetTrigger("Attacca");
 	}
 }

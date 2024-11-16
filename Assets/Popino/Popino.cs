@@ -11,7 +11,8 @@ public class Popino: baseCarta
 	public override void action()
 	{
 		base.action();
-
+		Debug.Log("wiggle?");
+		gameObject.GetComponent<GestCarta>().wiggle();
 	}
 	private void Update()
 	{

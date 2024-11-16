@@ -176,7 +176,7 @@ public class PopinoController: MonoBehaviour
 				//Debug.Log(gameObject.name + " a " + transform.position);
 				posX = x;
 				posY = y;
-
+				BoardManager.scacchiera[x][y].GetComponent<baseCarta>().action();
 				BoardManager.passaTurno();
 			}
 		}

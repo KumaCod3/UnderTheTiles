@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6385078686525204243, guid: 557dfa4df519dfd49b58e1f3b6d72b61, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 944b8ee6f84511947b2cb00d175eb9fc, type: 3}
+    - target: {fileID: 6385078686525204243, guid: 557dfa4df519dfd49b58e1f3b6d72b61, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7988489524255852010, guid: 557dfa4df519dfd49b58e1f3b6d72b61, type: 3}
       propertyPath: m_Name
       value: BonusAtt
@@ -82,4 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22d279091694f054abf8e872fd122948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tipo: 
+  nome: 
+  descrizione: 
   attacco: 1

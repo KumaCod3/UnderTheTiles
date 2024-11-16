@@ -34,5 +34,6 @@ public class CartaMostro3: baseCarta
 	public override void ogniTurno()
 	{
 		PopinoController.vita = PopinoController.vita - attacco;
+		gameObject.GetComponent<GestCarta>().wiggle();
 	}
 }
