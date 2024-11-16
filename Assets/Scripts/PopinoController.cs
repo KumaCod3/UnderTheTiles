@@ -4,7 +4,7 @@ public class PopinoController: MonoBehaviour
 	public static int posX;
 	public static int posY;
 	public static int attacco = 1;
-	public static int vita = 2;
+	public static int vita = 4;
 
 
 	void Update()
@@ -48,13 +48,21 @@ public class PopinoController: MonoBehaviour
 	private bool bloccato()
 	{
 		bool bl = true;
+
 		if (BoardManager.check(posX - 1, posY))
 		{
 			if (!BoardManager.scacchiera[posX - 1][posY].GetComponent<CartaUscita>() || BoardManager.scacchiera[posX - 1][posY].GetComponent<CartaUscita>().costoUscita <= GameManager.punti)
 			{
 				if (!BoardManager.scacchiera[posX - 1][posY].GetComponent<Usata>() || GameManager.punti >= BoardManager.scacchiera[posX - 1][posY].GetComponent<Usata>().costo)
 				{
-					return false;
+					if (BoardManager.scacchiera[posX - 1][posY].GetComponent<CartaMostro2>())
+					{
+						Debug.Log("AutAttacco!");
+						BoardManager.scacchiera[posX - 1][posY].GetComponent<baseCarta>().action();
+						Destroy(BoardManager.scacchiera[posX - 1][posY].gameObject);
+						BoardManager.scacchiera[posX - 1][posY] = null;
+					}
+					bl = false;
 				}
 			}
 		}
@@ -64,7 +72,14 @@ public class PopinoController: MonoBehaviour
 			{
 				if (!BoardManager.scacchiera[posX + 1][posY].GetComponent<Usata>() || GameManager.punti >= BoardManager.scacchiera[posX + 1][posY].GetComponent<Usata>().costo)
 				{
-					return false;
+					if (BoardManager.scacchiera[posX + 1][posY].GetComponent<CartaMostro2>())
+					{
+						Debug.Log("AutAttacco!");
+						BoardManager.scacchiera[posX + 1][posY].GetComponent<baseCarta>().action();
+						Destroy(BoardManager.scacchiera[posX + 1][posY].gameObject);
+						BoardManager.scacchiera[posX + 1][posY] = null;
+					}
+					bl = false;
 				}
 			}
 		}
@@ -74,7 +89,14 @@ public class PopinoController: MonoBehaviour
 			{
 				if (!BoardManager.scacchiera[posX][posY - 1].GetComponent<Usata>() || GameManager.punti >= BoardManager.scacchiera[posX][posY - 1].GetComponent<Usata>().costo)
 				{
-					return false;
+					if (BoardManager.scacchiera[posX][posY - 1].GetComponent<CartaMostro2>())
+					{
+						Debug.Log("AutAttacco!");
+						BoardManager.scacchiera[posX][posY - 1].GetComponent<baseCarta>().action();
+						Destroy(BoardManager.scacchiera[posX][posY - 1].gameObject);
+						BoardManager.scacchiera[posX][posY - 1] = null;
+					}
+					bl = false;
 				}
 			}
 		}
@@ -84,7 +106,14 @@ public class PopinoController: MonoBehaviour
 			{
 				if (!BoardManager.scacchiera[posX][posY + 1].GetComponent<Usata>() || GameManager.punti >= BoardManager.scacchiera[posX][posY + 1].GetComponent<Usata>().costo)
 				{
-					return false;
+					if (BoardManager.scacchiera[posX][posY + 1].GetComponent<CartaMostro2>() || BoardManager.scacchiera[posX][posY + 1].GetComponent<CartaMostro4>())
+					{
+						Debug.Log("AutAttacco!");
+						BoardManager.scacchiera[posX][posY + 1].GetComponent<baseCarta>().action();
+						Destroy(BoardManager.scacchiera[posX][posY + 1].gameObject);
+						BoardManager.scacchiera[posX][posY + 1] = null;
+					}
+					bl = false;
 				}
 			}
 		}
@@ -147,6 +176,8 @@ public class PopinoController: MonoBehaviour
 				//Debug.Log(gameObject.name + " a " + transform.position);
 				posX = x;
 				posY = y;
+
+				BoardManager.passaTurno();
 			}
 		}
 	}

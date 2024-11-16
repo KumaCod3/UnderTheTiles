@@ -95,4 +95,18 @@ public class BoardManager: MonoBehaviour
 	{
 		return scacchiera[x][y];
 	}
+
+	public static void passaTurno()
+	{
+		for (int y = 0; y < scacchiera.Length; y++)
+		{
+			for (int x = 0; x < scacchiera[0].Length; x++)
+			{
+				if (scacchiera[x][y] && scacchiera[x][y].GetComponent<baseCarta>())
+				{
+					scacchiera[x][y].GetComponent<baseCarta>().ogniTurno();
+				}
+			}
+		}
+	}
 }
