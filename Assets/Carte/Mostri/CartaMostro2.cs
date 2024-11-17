@@ -1,8 +1,6 @@
 public class CartaMostro2: baseCarta
 {
-	public int punti;
-	public int vita;
-	public int attacco;
+
 
 	private void Start()
 	{
@@ -19,16 +17,10 @@ public class CartaMostro2: baseCarta
 	public override void action()
 	{
 		base.action();
-
-		while (vita > 0 && PopinoController.vita > 0)
-		{
-			vita = vita - PopinoController.attacco;
-			PopinoController.vita = PopinoController.vita - attacco;
-		}
-		if (vita <= 0)
-		{
-			GameManager.punti = GameManager.punti + punti;
-			Destroy(gameObject);
-		}
+		gameObject.GetComponent<GestCarta>().wiggle();
+		combat();
+	}
+	public override void ogniTurno()
+	{
 	}
 }

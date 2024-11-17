@@ -13,4 +13,7 @@ public class Usata: baseCarta
 		base.action();
 		GameManager.punti -= 1;
 	}
+	public override void ogniTurno()
+	{
+	}
 }

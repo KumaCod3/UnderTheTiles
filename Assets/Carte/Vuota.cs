@@ -18,4 +18,7 @@ public class Vuota: baseCarta
 		}
 		BoardManager.assegna(card, y, x);
 	}
+	public override void ogniTurno()
+	{
+	}
 }

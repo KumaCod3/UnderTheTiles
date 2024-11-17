@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -36,8 +37,35 @@ public class GestCarta: MonoBehaviour
 	}
 	public void wiggle()
 	{
-
-		//	gameObject.GetComponent<Animator>()
 		anim.SetTrigger("Attacca");
+	}
+	public void die()
+	{
+		anim.SetBool("Morto", true);
+	}
+	public void diePop()
+	{
+		StartCoroutine(specEmuori());
+	}
+	private IEnumerator specEmuori()
+	{
+		yield return new WaitForSeconds(.2f);
+		anim.SetBool("Morto", true);
+	}
+	public void bevi()
+	{
+		anim.SetBool("Bevi", true);
+	}
+	public void dist()
+	{
+		Destroy(gameObject);
+	}
+	public void esciPop()
+	{
+		anim.SetBool("EsciPop", true);
+	}
+	public void esciPorta()
+	{
+		anim.SetBool("EsciPort", true);
 	}
 }

@@ -24,6 +24,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7988489524255852020, guid: 557dfa4df519dfd49b58e1f3b6d72b61, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7988489524255852020, guid: 557dfa4df519dfd49b58e1f3b6d72b61, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7988489524255852020, guid: 557dfa4df519dfd49b58e1f3b6d72b61, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -94,5 +102,5 @@ MonoBehaviour:
   nome: 
   descrizione: 
   punti: 3
-  vita: 1
+  vita: 2
   attacco: 1

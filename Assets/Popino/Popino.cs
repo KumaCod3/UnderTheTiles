@@ -11,7 +11,6 @@ public class Popino: baseCarta
 	public override void action()
 	{
 		base.action();
-		Debug.Log("wiggle?");
 		gameObject.GetComponent<GestCarta>().wiggle();
 	}
 	private void Update()
@@ -30,5 +29,8 @@ public class Popino: baseCarta
 		}
 		BoardManager.assegna(card, y, x);
 		BoardManager.pop = card;
+	}
+	public override void ogniTurno()
+	{
 	}
 }

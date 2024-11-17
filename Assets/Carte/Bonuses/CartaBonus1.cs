@@ -1,7 +1,5 @@
 public class CartaBonus1: baseCarta
 {
-	public int attacco;
-
 	private void Start()
 	{
 		gameObject.GetComponent<GestCarta>().cambia2("+" + attacco);
@@ -11,11 +9,15 @@ public class CartaBonus1: baseCarta
 		descrizione = "Guadagni 1 punto attacco e 1 punto movimento.";
 	}
 
+
 	public override void action()
 	{
 		base.action();
 		PopinoController.attacco += attacco;
 		GameManager.punti += 1;
-		Destroy(gameObject);
+		gameObject.GetComponent<GestCarta>().bevi();
+	}
+	public override void ogniTurno()
+	{
 	}
 }

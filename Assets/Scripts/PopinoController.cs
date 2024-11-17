@@ -1,30 +1,22 @@
+using System.Collections;
 using UnityEngine;
 public class PopinoController: MonoBehaviour
 {
 	public static int posX;
 	public static int posY;
 	public static int attacco = 1;
-	public static int vita = 4;
+	public static int vita = 2;
 
 
 	void Update()
 	{
 		if (!GameManager.eInPausa())
 		{
-			if (Input.anyKeyDown)
-			{
-				if (bloccato())
-				{
-					Debug.Log("BLOCCATOOOO");
-					vita = 0;
-					GameManager.pausa();
-				}
-			}
 			if (vita <= 0)
 			{
 				Debug.Log("GAME OVEEEEER!!!!");
 				GameManager.pausa();
-				Destroy(gameObject);
+				gameObject.GetComponent<GestCarta>().diePop();
 			}
 			if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
 			{
@@ -57,7 +49,6 @@ public class PopinoController: MonoBehaviour
 				{
 					if (BoardManager.scacchiera[posX - 1][posY].GetComponent<CartaMostro2>())
 					{
-						Debug.Log("AutAttacco!");
 						BoardManager.scacchiera[posX - 1][posY].GetComponent<baseCarta>().action();
 						Destroy(BoardManager.scacchiera[posX - 1][posY].gameObject);
 						BoardManager.scacchiera[posX - 1][posY] = null;
@@ -74,7 +65,6 @@ public class PopinoController: MonoBehaviour
 				{
 					if (BoardManager.scacchiera[posX + 1][posY].GetComponent<CartaMostro2>())
 					{
-						Debug.Log("AutAttacco!");
 						BoardManager.scacchiera[posX + 1][posY].GetComponent<baseCarta>().action();
 						Destroy(BoardManager.scacchiera[posX + 1][posY].gameObject);
 						BoardManager.scacchiera[posX + 1][posY] = null;
@@ -91,7 +81,6 @@ public class PopinoController: MonoBehaviour
 				{
 					if (BoardManager.scacchiera[posX][posY - 1].GetComponent<CartaMostro2>())
 					{
-						Debug.Log("AutAttacco!");
 						BoardManager.scacchiera[posX][posY - 1].GetComponent<baseCarta>().action();
 						Destroy(BoardManager.scacchiera[posX][posY - 1].gameObject);
 						BoardManager.scacchiera[posX][posY - 1] = null;
@@ -108,7 +97,6 @@ public class PopinoController: MonoBehaviour
 				{
 					if (BoardManager.scacchiera[posX][posY + 1].GetComponent<CartaMostro2>() || BoardManager.scacchiera[posX][posY + 1].GetComponent<CartaMostro4>())
 					{
-						Debug.Log("AutAttacco!");
 						BoardManager.scacchiera[posX][posY + 1].GetComponent<baseCarta>().action();
 						Destroy(BoardManager.scacchiera[posX][posY + 1].gameObject);
 						BoardManager.scacchiera[posX][posY + 1] = null;
@@ -125,60 +113,98 @@ public class PopinoController: MonoBehaviour
 		posX = x;
 		posY = y;
 		GameManager.pino = this;
-		//gameObject.GetComponent<PopinoController>();
 	}
 
 	private void moveDown()
 	{
-		Debug.Log("da " + posX + "," + posY + " a " + (posX - 1) + "," + posY + BoardManager.check(posX - 1, posY));
 		if (BoardManager.check(posX - 1, posY))
 		{
-			moveTo(posX - 1, posY);
+			StartCoroutine(moveToR(posX - 1, posY));
 		}
 	}
 	private void moveUp()
 	{
-		Debug.Log("da " + posX + "," + posY + " a " + (posX + 1) + "," + posY + BoardManager.check(posX + 1, posY));
 		if (BoardManager.check(posX + 1, posY))
 		{
-			moveTo(posX + 1, posY);
+			StartCoroutine(moveToR(posX + 1, posY));
 		}
 	}
 	private void moveLeft()
 	{
-		Debug.Log("da " + posX + "," + posY + " a " + (posX) + "," + (posY - 1) + BoardManager.check(posX, posY - 1));
 		if (BoardManager.check(posX, posY - 1))
 		{
-			moveTo(posX, posY - 1);
+			StartCoroutine(moveToR(posX, posY - 1));
 		}
 	}
 	private void moveRight()
 	{
-		Debug.Log("da " + posX + "," + posY + " a " + (posX) + "," + (posY + 1) + BoardManager.check(posX, posY + 1));
 		if (BoardManager.check(posX, posY + 1))
 		{
-			moveTo(posX, posY + 1);
+			StartCoroutine(moveToR(posX, posY + 1));
 		}
 	}
-	public void moveTo(int x, int y)
-	{
-		if (!BoardManager.scacchiera[x][y].GetComponent<CartaUscita>() || BoardManager.scacchiera[x][y].GetComponent<CartaUscita>().costoUscita <= GameManager.punti)
-		{
-			if (!BoardManager.scacchiera[x][y].GetComponent<Usata>() || GameManager.punti >= BoardManager.scacchiera[x][y].GetComponent<Usata>().costo)
-			{
 
+	public IEnumerator moveToR(int x, int y)
+	{
+		if (!BoardManager.scacchiera[x][y].GetComponent<CartaUscita>())
+		{
+			if (!BoardManager.scacchiera[x][y].GetComponent<Usata>())
+			{
 				BoardManager.scacchiera[x][y].GetComponent<baseCarta>().action();
+				GameManager.pausa();
+				yield return new WaitForSeconds(.3f);
+
 				Destroy(BoardManager.scacchiera[x][y].gameObject);
-				BoardManager.scacchiera[posX][posY] = null;
+				BoardManager.metVuot(posX, posY);
+
 				BoardManager.scacchiera[x][y] = BoardManager.pop;
-				//	Debug.Log("muovo da " + transform.position);
 				BoardManager.scacchiera[x][y].transform.position = new Vector3(y, x, 0);
-				//Debug.Log(gameObject.name + " a " + transform.position);
 				posX = x;
 				posY = y;
+				if (bloccato())
+				{
+					Debug.Log("BLOCCATOOOO");
+					vita = 0;
+					GameManager.pausa();
+				}
 				BoardManager.scacchiera[x][y].GetComponent<baseCarta>().action();
+				yield return new WaitForSeconds(.3f);
 				BoardManager.passaTurno();
+				GameManager.play();
 			}
+			else if (BoardManager.scacchiera[x][y].GetComponent<Usata>() && GameManager.punti >= BoardManager.scacchiera[x][y].GetComponent<Usata>().costo)
+			{
+				BoardManager.scacchiera[x][y].GetComponent<baseCarta>().action();
+				GameManager.pausa();
+				yield return new WaitForSeconds(.3f);
+
+				Destroy(BoardManager.scacchiera[x][y].gameObject);
+				BoardManager.metVuot(posX, posY);
+
+				BoardManager.scacchiera[x][y] = BoardManager.pop;
+				BoardManager.scacchiera[x][y].transform.position = new Vector3(y, x, 0);
+				posX = x;
+				posY = y;
+				if (bloccato())
+				{
+					Debug.Log("BLOCCATOOOO");
+					vita = 0;
+					GameManager.pausa();
+				}
+
+				// se vuoi anim cammina QUI
+
+				yield return new WaitForSeconds(.3f);
+				BoardManager.passaTurno();
+				GameManager.play();
+			}
+		}
+		else if (BoardManager.scacchiera[x][y].GetComponent<CartaUscita>() && BoardManager.scacchiera[x][y].GetComponent<CartaUscita>().costoUscita <= GameManager.punti)
+		{
+			BoardManager.scacchiera[x][y].GetComponent<baseCarta>().action();
+			BoardManager.scacchiera[posX][posY].transform.position = new Vector3(y, x, 0);
+			BoardManager.scacchiera[posX][posY].GetComponent<GestCarta>().esciPop();
+			BoardManager.scacchiera[x][y] = BoardManager.pop;
 		}
 	}
 }

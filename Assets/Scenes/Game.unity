@@ -318,7 +318,7 @@ MonoBehaviour:
   riga0:
   - {fileID: 5901437902140358246, guid: 5d6fadff1e46bfb419cc9dc702654b11, type: 3}
   - {fileID: 8467484249169421452, guid: 240a3e5e86841b343a506dcface2ce1f, type: 3}
-  - {fileID: 3026655747627647646, guid: 9931f508bf125dd4182d04a79258401b, type: 3}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -372,7 +372,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   vuota: {fileID: 7988489524255852010, guid: 3896c4772843c214292e60c9c31fcb66, type: 3}
-  usata: {fileID: 694843437037572031, guid: 44130c145af51994591f0d114a9a9bf3, type: 3}
+  usa: {fileID: 694843437037572031, guid: 44130c145af51994591f0d114a9a9bf3, type: 3}
 --- !u!1 &15613208
 GameObject:
   m_ObjectHideFlags: 0

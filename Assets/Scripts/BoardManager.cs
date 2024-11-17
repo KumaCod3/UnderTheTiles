@@ -12,11 +12,13 @@ public class BoardManager: MonoBehaviour
 	public GameObject[] riga6 = new GameObject[7];
 	static public GameObject[][] scacchiera = new GameObject[7][];
 	public GameObject vuota;
-	public GameObject usata;
+	public GameObject usa;
+	public static GameObject usata;
 	public static GameObject pop;
 
 	private void Start()
 	{
+		usata = usa;
 		scacchiera[0] = riga0;
 		scacchiera[1] = riga1;
 		scacchiera[2] = riga2;
@@ -44,7 +46,7 @@ public class BoardManager: MonoBehaviour
 	}
 	private void Update()
 	{
-		riempi();
+		//		riempi();
 	}
 	static public bool check(int x, int y)
 	{
@@ -73,7 +75,7 @@ public class BoardManager: MonoBehaviour
 	{
 		scacchiera[x][y] = card;
 	}
-	public void riempi()
+	public static void riempi()
 	{
 		for (int y = 0; y < scacchiera.Length; y++)
 		{
@@ -86,9 +88,7 @@ public class BoardManager: MonoBehaviour
 					scacchiera[x][y].GetComponent<baseCarta>().disegna(y, x);
 				}
 			}
-
 		}
-
 	}
 
 	public static GameObject sopraCarta(int x, int y)
@@ -96,6 +96,11 @@ public class BoardManager: MonoBehaviour
 		return scacchiera[x][y];
 	}
 
+	public static void metVuot(int x, int y)
+	{
+		scacchiera[x][y] = usata;
+		scacchiera[x][y].GetComponent<baseCarta>().disegna(y, x);
+	}
 	public static void passaTurno()
 	{
 		for (int y = 0; y < scacchiera.Length; y++)

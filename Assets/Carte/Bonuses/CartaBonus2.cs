@@ -1,6 +1,5 @@
 public class CartaBonus2: baseCarta
 {
-	public int vita;
 
 	private void Start()
 	{
@@ -16,6 +15,9 @@ public class CartaBonus2: baseCarta
 		base.action();
 		PopinoController.vita += vita;
 		GameManager.punti += 1;
-		Destroy(gameObject);
+		gameObject.GetComponent<GestCarta>().bevi();
+	}
+	public override void ogniTurno()
+	{
 	}
 }

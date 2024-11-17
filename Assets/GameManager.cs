@@ -42,7 +42,8 @@ public class GameManager: MonoBehaviour
 			{
 				if (BoardManager.check(yy, xx))
 				{
-					pino.moveTo(yy, xx);
+					StartCoroutine(pino.moveToR(yy, xx));
+					//pino.moveTo(yy, xx);
 				}
 			}
 		}
