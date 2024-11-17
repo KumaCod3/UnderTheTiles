@@ -3,8 +3,17 @@ using UnityEngine;
 public class TODO: MonoBehaviour
 {
 	/*
+	 * 
+	 * ANIM NUMERI
+	 * 
+	 * 
 	 * sistema salvataggio e levelUP
 	 *		mancano da decidere bonus liveli e aspetto!
+	 * 
+	 * 
+	 * 
+	 * altre scene
+	 * 
 	 * 
 	 * 
 	 * fai altri mostri 4 5 e 6???
@@ -12,7 +21,6 @@ public class TODO: MonoBehaviour
 	 * 	 
 	 * 	 
 	 * 	 
-	 * altre scene
 	 * 
 	 * testi
 	 * 
@@ -20,7 +28,7 @@ public class TODO: MonoBehaviour
 	 * 
 	 * audio
 	 * 
-	 * fai svolgimento battaglia e/o anim
+	 * fai svolgimento battaglia e/o anim ++
 	 * 
 	 */
 }

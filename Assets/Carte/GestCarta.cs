@@ -9,6 +9,7 @@ public class GestCarta: MonoBehaviour
 	TextMeshProUGUI TD;
 	TextMeshProUGUI BD;
 	Animator anim;
+	Animator anum;
 
 	void Start()
 	{
@@ -17,22 +18,48 @@ public class GestCarta: MonoBehaviour
 		TD = gameObject.transform.GetChild(0).GetChild(2).GetComponent<TextMeshProUGUI>();
 		BD = gameObject.transform.GetChild(0).GetChild(3).GetComponent<TextMeshProUGUI>();
 		anim = gameObject.GetComponent<Animator>();
+		anum = gameObject.GetComponentInChildren<Animator>();
 	}
 
 	public void cambia1(string s)
 	{
-		TS.SetText(s);
+		StartCoroutine(cambiaA(s));
 	}
 	public void cambia2(string s)
 	{
-		TD.SetText(s);
+		StartCoroutine(cambiaB(s));
 	}
 	public void cambia3(string s)
 	{
-		BS.SetText(s);
+		StartCoroutine(cambiaC(s));
 	}
 	public void cambia4(string s)
 	{
+		StartCoroutine(cambiaD(s));
+	}
+	private IEnumerator cambiaA(string s)
+	{
+		anum.SetTrigger("vita");
+		yield return new WaitForSeconds(.1f);
+		TS.SetText(s);
+	}
+
+	private IEnumerator cambiaB(string s)
+	{
+		anum.SetTrigger("attacco");
+		yield return new WaitForSeconds(.1f);
+		TD.SetText(s);
+	}
+	private IEnumerator cambiaC(string s)
+	{
+		anum.SetTrigger("vita");
+		yield return new WaitForSeconds(.1f);
+		BS.SetText(s);
+	}
+	private IEnumerator cambiaD(string s)
+	{
+		anum.SetTrigger("uscita");
+		yield return new WaitForSeconds(.1f);
 		BD.SetText(s);
 	}
 	public void wiggle()

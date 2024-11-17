@@ -1,12 +1,15 @@
 using UnityEngine;
 public class Popino: baseCarta
 {
+	Vector3 dir;
+	float speed = 1.5f;
 
 	private void Start()
 	{
 		tipo = "TU";
 		nome = "TU";
 		descrizione = "Tu.";
+		dir = gameObject.transform.position;
 	}
 	public override void action()
 	{
@@ -18,6 +21,8 @@ public class Popino: baseCarta
 		gameObject.GetComponent<GestCarta>().cambia4("" + GameManager.punti);
 		gameObject.GetComponent<GestCarta>().cambia1("" + PopinoController.vita);
 		gameObject.GetComponent<GestCarta>().cambia2("" + PopinoController.attacco);
+
+		transform.position = Vector3.MoveTowards(transform.position, dir, speed * Time.deltaTime);
 
 	}
 	public override void disegna(int x, int y)
@@ -32,5 +37,9 @@ public class Popino: baseCarta
 	}
 	public override void ogniTurno()
 	{
+	}
+	public void setDir(int x, int y)
+	{
+		dir = new Vector3(y, x, 0);
 	}
 }

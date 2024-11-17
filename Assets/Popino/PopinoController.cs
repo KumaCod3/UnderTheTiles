@@ -155,20 +155,21 @@ public class PopinoController: MonoBehaviour
 				yield return new WaitForSeconds(.3f);
 
 				Destroy(BoardManager.scacchiera[x][y].gameObject);
-				BoardManager.metVuot(posX, posY);
 
 				BoardManager.scacchiera[x][y] = BoardManager.pop;
-				BoardManager.scacchiera[x][y].transform.position = new Vector3(y, x, 0);
-				posX = x;
-				posY = y;
+				BoardManager.scacchiera[x][y].GetComponent<Popino>().setDir(x, y);
+
 				if (bloccato())
 				{
 					Debug.Log("BLOCCATOOOO");
 					vita = 0;
 					GameManager.pausa();
 				}
-				BoardManager.scacchiera[x][y].GetComponent<baseCarta>().action();
+				BoardManager.scacchiera[posX][posY].GetComponent<baseCarta>().action();
 				yield return new WaitForSeconds(.3f);
+				BoardManager.metVuot(posX, posY);
+				posX = x;
+				posY = y;
 				BoardManager.passaTurno();
 				GameManager.play();
 			}
@@ -179,22 +180,21 @@ public class PopinoController: MonoBehaviour
 				yield return new WaitForSeconds(.3f);
 
 				Destroy(BoardManager.scacchiera[x][y].gameObject);
-				BoardManager.metVuot(posX, posY);
 
 				BoardManager.scacchiera[x][y] = BoardManager.pop;
-				BoardManager.scacchiera[x][y].transform.position = new Vector3(y, x, 0);
-				posX = x;
-				posY = y;
+				BoardManager.scacchiera[x][y].GetComponent<Popino>().setDir(x, y);
+
 				if (bloccato())
 				{
 					Debug.Log("BLOCCATOOOO");
 					vita = 0;
 					GameManager.pausa();
 				}
-
-				// se vuoi anim cammina QUI
-
+				//				BoardManager.scacchiera[posX][posY].GetComponent<baseCarta>().action();
 				yield return new WaitForSeconds(.3f);
+				BoardManager.metVuot(posX, posY);
+				posX = x;
+				posY = y;
 				BoardManager.passaTurno();
 				GameManager.play();
 			}
@@ -202,7 +202,8 @@ public class PopinoController: MonoBehaviour
 		else if (BoardManager.scacchiera[x][y].GetComponent<CartaUscita>() && BoardManager.scacchiera[x][y].GetComponent<CartaUscita>().costoUscita <= GameManager.punti)
 		{
 			BoardManager.scacchiera[x][y].GetComponent<baseCarta>().action();
-			BoardManager.scacchiera[posX][posY].transform.position = new Vector3(y, x, 0);
+			//				BoardManager.scacchiera[x][y].transform.position = new Vector3(y, x, 0);
+			BoardManager.scacchiera[posX][posY].GetComponent<Popino>().setDir(x, y);
 			BoardManager.scacchiera[posX][posY].GetComponent<GestCarta>().esciPop();
 			BoardManager.scacchiera[x][y] = BoardManager.pop;
 		}
