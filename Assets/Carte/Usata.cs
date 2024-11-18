@@ -1,9 +1,8 @@
 public class Usata: baseCarta
 {
-	public int costo;
 	private void Start()
 	{
-		gameObject.GetComponent<GestCarta>().cambia4("-" + costo);
+		base.Start();
 		tipo = "movimento";
 		nome = "Vuota";
 		descrizione = "Passare da qui ti costa un movimento.";
@@ -11,7 +10,7 @@ public class Usata: baseCarta
 	public override void action()
 	{
 		base.action();
-		GameManager.punti -= 1;
+		_pino.GetComponent<PopinoController>().camPun(GameManager.punti - punti);
 	}
 	public override void ogniTurno()
 	{

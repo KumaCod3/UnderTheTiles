@@ -39,6 +39,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Popino
       objectReference: {fileID: 0}
+    - target: {fileID: 7988489524255852010, guid: 557dfa4df519dfd49b58e1f3b6d72b61, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 7988489524255852020, guid: 557dfa4df519dfd49b58e1f3b6d72b61, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -125,6 +129,9 @@ MonoBehaviour:
   tipo: 
   nome: 
   descrizione: 
+  punti: 0
+  vita: 0
+  attacco: 0
 --- !u!114 &7552427408388108699
 MonoBehaviour:
   m_ObjectHideFlags: 0

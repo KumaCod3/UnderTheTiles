@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1421220906817772886, guid: 557dfa4df519dfd49b58e1f3b6d72b61, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3009736662019915574, guid: 557dfa4df519dfd49b58e1f3b6d72b61, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.59974873
@@ -54,6 +58,14 @@ PrefabInstance:
     - target: {fileID: 3808000471736612578, guid: 557dfa4df519dfd49b58e1f3b6d72b61, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4294901761
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250082284861824683, guid: 557dfa4df519dfd49b58e1f3b6d72b61, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4768640959561163520, guid: 557dfa4df519dfd49b58e1f3b6d72b61, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6385078686525204243, guid: 557dfa4df519dfd49b58e1f3b6d72b61, type: 3}
       propertyPath: m_Sprite
@@ -177,7 +189,6 @@ MonoBehaviour:
   tipo: 
   nome: 
   descrizione: 
-  punti: 0
+  punti: 1
   vita: 0
   attacco: 0
-  costo: 1

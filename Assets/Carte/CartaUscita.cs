@@ -1,11 +1,10 @@
 using UnityEngine;
 public class CartaUscita: baseCarta
 {
-	public int costoUscita;
 
 	private void Start()
 	{
-		gameObject.GetComponent<GestCarta>().cambia4("-" + costoUscita);
+		gameObject.GetComponent<GestCarta>().cambia4("-" + punti);
 		tipo = "movimento";
 		nome = "Uscita";
 		descrizione = "Per vincere il livello, vieni qui.";

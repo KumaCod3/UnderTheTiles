@@ -9,6 +9,12 @@ public abstract class baseCarta: MonoBehaviour
 	public int punti;
 	public int vita;
 	public int attacco;
+	protected GameObject _pino;
+	protected void Start()
+	{
+		_pino = GameObject.FindWithTag("Player");
+
+	}
 	public virtual void action()
 	{
 	}
@@ -26,14 +32,14 @@ public abstract class baseCarta: MonoBehaviour
 
 	public void combat()
 	{
-		while (vita > 0 && PopinoController.vita > 0)
+		while (vita > 0 && _pino.GetComponent<PopinoController>().getVita() > 0)
 		{
-			vita = vita - PopinoController.attacco;
-			PopinoController.vita = PopinoController.vita - attacco;
+			vita = vita - _pino.GetComponent<PopinoController>().getAttacco();
+			_pino.GetComponent<PopinoController>().camVita(_pino.GetComponent<PopinoController>().getVita() - attacco);
 		}
 		if (vita <= 0)
 		{
-			GameManager.punti = GameManager.punti + punti;
+			_pino.GetComponent<PopinoController>().camPun(GameManager.punti + punti);
 			gameObject.GetComponent<GestCarta>().die();
 		}
 	}

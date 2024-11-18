@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1421220906817772886, guid: 557dfa4df519dfd49b58e1f3b6d72b61, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4768640959561163520, guid: 557dfa4df519dfd49b58e1f3b6d72b61, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6385078686525204243, guid: 557dfa4df519dfd49b58e1f3b6d72b61, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -93,4 +101,6 @@ MonoBehaviour:
   tipo: 
   nome: 
   descrizione: 
-  costoUscita: 3
+  punti: 3
+  vita: 0
+  attacco: 0

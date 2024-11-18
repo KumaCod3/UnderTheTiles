@@ -14,58 +14,55 @@ public class GestCarta: MonoBehaviour
 	void Start()
 	{
 		TS = gameObject.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
+		if (gameObject.GetComponent<baseCarta>().vita != 0)
+			TS.SetText("" + gameObject.GetComponent<baseCarta>().vita);
+		else
+			TS.SetText("");
 		BS = gameObject.transform.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>();
+		BS.SetText("");
 		TD = gameObject.transform.GetChild(0).GetChild(2).GetComponent<TextMeshProUGUI>();
+		if (gameObject.GetComponent<baseCarta>().attacco != 0)
+			TD.SetText("" + gameObject.GetComponent<baseCarta>().attacco);
+		else
+			TD.SetText("");
 		BD = gameObject.transform.GetChild(0).GetChild(3).GetComponent<TextMeshProUGUI>();
+		if (gameObject.GetComponent<baseCarta>().punti != 0)
+			BD.SetText("-" + gameObject.GetComponent<baseCarta>().punti);
+		else
+			BD.SetText("");
 		anim = gameObject.GetComponent<Animator>();
-		anum = gameObject.GetComponentInChildren<Animator>();
+		anum = gameObject.transform.GetChild(0).GetComponent<Animator>();
+
 	}
 
 	public void cambia1(string s)
 	{
-		StartCoroutine(cambiaA(s));
+		StartCoroutine(cambia("vita", s, TS));
 	}
 	public void cambia2(string s)
 	{
-		StartCoroutine(cambiaB(s));
+		StartCoroutine(cambia("attacco", s, TD));
 	}
 	public void cambia3(string s)
 	{
-		StartCoroutine(cambiaC(s));
+		// aaaa
 	}
 	public void cambia4(string s)
 	{
-		StartCoroutine(cambiaD(s));
-	}
-	private IEnumerator cambiaA(string s)
-	{
-		anum.SetTrigger("vita");
-		yield return new WaitForSeconds(.1f);
-		TS.SetText(s);
+		StartCoroutine(cambia("uscita", s, BD));
 	}
 
-	private IEnumerator cambiaB(string s)
+	private IEnumerator cambia(string par, string val, TextMeshProUGUI tex)
 	{
-		anum.SetTrigger("attacco");
-		yield return new WaitForSeconds(.1f);
-		TD.SetText(s);
+		anum.SetTrigger(par);
+		yield return new WaitForSeconds(.2f);
+		tex.SetText(val);
 	}
-	private IEnumerator cambiaC(string s)
-	{
-		anum.SetTrigger("vita");
-		yield return new WaitForSeconds(.1f);
-		BS.SetText(s);
-	}
-	private IEnumerator cambiaD(string s)
-	{
-		anum.SetTrigger("uscita");
-		yield return new WaitForSeconds(.1f);
-		BD.SetText(s);
-	}
-	public void wiggle()
-	{
-		anim.SetTrigger("Attacca");
-	}
+
+	//public void wiggle()
+	//{
+	//	anim.SetTrigger("Attacca");
+	//}
 	public void die()
 	{
 		anim.SetBool("Morto", true);
@@ -77,7 +74,12 @@ public class GestCarta: MonoBehaviour
 	private IEnumerator specEmuori()
 	{
 		yield return new WaitForSeconds(.2f);
+		muori();
 		anim.SetBool("Morto", true);
+	}
+	public void muori()
+	{
+		anum.SetTrigger("muori");
 	}
 	public void bevi()
 	{
@@ -87,12 +89,19 @@ public class GestCarta: MonoBehaviour
 	{
 		Destroy(gameObject);
 	}
+	public void disatt()
+	{
+		gameObject.SetActive(false);
+	}
 	public void esciPop()
 	{
+		muori();
 		anim.SetBool("EsciPop", true);
 	}
 	public void esciPorta()
 	{
+		muori();
 		anim.SetBool("EsciPort", true);
+		anum.SetTrigger("uscita");
 	}
 }

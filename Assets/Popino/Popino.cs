@@ -6,24 +6,22 @@ public class Popino: baseCarta
 
 	private void Start()
 	{
+		base.Start();
 		tipo = "TU";
 		nome = "TU";
 		descrizione = "Tu.";
 		dir = gameObject.transform.position;
+		gameObject.GetComponent<GestCarta>().cambia1("" + _pino.GetComponent<PopinoController>().getVita());
+		gameObject.GetComponent<GestCarta>().cambia2("" + _pino.GetComponent<PopinoController>().getAttacco());
+		gameObject.GetComponent<GestCarta>().cambia4("" + GameManager.punti);
 	}
 	public override void action()
 	{
 		base.action();
-		gameObject.GetComponent<GestCarta>().wiggle();
 	}
 	private void Update()
 	{
-		gameObject.GetComponent<GestCarta>().cambia4("" + GameManager.punti);
-		gameObject.GetComponent<GestCarta>().cambia1("" + PopinoController.vita);
-		gameObject.GetComponent<GestCarta>().cambia2("" + PopinoController.attacco);
-
 		transform.position = Vector3.MoveTowards(transform.position, dir, speed * Time.deltaTime);
-
 	}
 	public override void disegna(int x, int y)
 	{
