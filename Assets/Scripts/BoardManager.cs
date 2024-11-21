@@ -58,7 +58,9 @@ public class BoardManager: MonoBehaviour
 		int yD = Mathf.Abs(PopinoController.posY - y);
 		if (xD + yD != 1)   // se non adiacente
 		{
+
 			return false;
+
 		}
 		return true;
 	}

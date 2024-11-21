@@ -4,6 +4,7 @@ public class CartaUscita: baseCarta
 
 	private void Start()
 	{
+		base.Start();
 		gameObject.GetComponent<GestCarta>().cambia4("-" + punti);
 		tipo = "movimento";
 		nome = "Uscita";

@@ -4,7 +4,6 @@ public class TODO: MonoBehaviour
 {
 	/*
 	 * 
-	 * ANIM NUMERI
 	 * 
 	 * 
 	 * sistema salvataggio e levelUP
@@ -24,11 +23,8 @@ public class TODO: MonoBehaviour
 	 * 
 	 * testi
 	 * 
-	 * 
-	 * 
 	 * audio
 	 * 
-	 * fai svolgimento battaglia e/o anim ++
 	 * 
 	 */
 }

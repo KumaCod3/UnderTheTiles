@@ -13,19 +13,28 @@ public abstract class baseCarta: MonoBehaviour
 	protected void Start()
 	{
 		_pino = GameObject.FindWithTag("Player");
-
 	}
 	public virtual void action()
 	{
 	}
 
 	public abstract void ogniTurno();
-	public virtual void disegna(int x, int y)
+	public void disegna(int x, int y)
 	{
-		GameObject card = Instantiate(gameObject, new Vector3(x, y, 0), new Quaternion(0, 0, 0, 0), GameObject.Find("/Caselle").transform);
+		GameObject card = Instantiate(gameObject, new Vector3(x, y, 0), new Quaternion(0, 0, 0, 0));
 		if (gameObject.GetComponent<PopinoController>())
 		{
 			gameObject.GetComponent<PopinoController>().setXY(x, y);
+			card.GetComponent<Popino>().setDir(x, y);
+			BoardManager.pop = card;
+		}
+		else if (gameObject.GetComponent<Vuota>())
+		{
+			card.transform.parent = GameObject.Find("/Vuote").transform;
+		}
+		else
+		{
+			card.transform.parent = GameObject.Find("/Caselle").transform;
 		}
 		BoardManager.assegna(card, y, x);
 	}

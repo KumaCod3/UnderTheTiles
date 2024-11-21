@@ -17,7 +17,6 @@ public class GameManager: MonoBehaviour
 	{
 		if (!eInPausa())
 		{
-
 			if (punti < 0)
 			{
 				punti = 0;
@@ -42,7 +41,6 @@ public class GameManager: MonoBehaviour
 				if (BoardManager.check(yy, xx))
 				{
 					StartCoroutine(pino.moveToR(yy, xx));
-					//pino.moveTo(yy, xx);
 				}
 			}
 		}

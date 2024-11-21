@@ -11,11 +11,9 @@ public class CartaMostro5: baseCarta
 	public override void action()
 	{
 		base.action();
-
 		combat();
 	}
 	public override void ogniTurno()
 	{
-
 	}
 }
