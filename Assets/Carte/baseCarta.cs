@@ -9,13 +9,16 @@ public abstract class baseCarta: MonoBehaviour
 	public int punti;
 	public int vita;
 	public int attacco;
+	public string nomeSuono;
 	protected GameObject _pino;
+
 	protected void Start()
 	{
 		_pino = GameObject.FindWithTag("Player");
 	}
 	public virtual void action()
 	{
+		FindObjectOfType<AudioManager>().PlaySound(nomeSuono);
 	}
 
 	public abstract void ogniTurno();

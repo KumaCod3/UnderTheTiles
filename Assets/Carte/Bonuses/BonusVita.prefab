@@ -100,3 +100,4 @@ MonoBehaviour:
   punti: 1
   vita: 1
   attacco: 0
+  nomeSuono: pozione2

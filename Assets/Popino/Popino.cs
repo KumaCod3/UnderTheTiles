@@ -30,4 +30,9 @@ public class Popino: baseCarta
 		dir = new Vector3(y, x, -1);
 
 	}
+
+	public void suonaMorto()
+	{
+		FindObjectOfType<AudioManager>().PlaySound("aa");
+	}
 }

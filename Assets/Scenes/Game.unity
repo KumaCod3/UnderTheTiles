@@ -3198,6 +3198,93 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1031570786
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1031570788}
+  - component: {fileID: 1031570787}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1031570787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031570786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92cd19e0accc5f84ca517163bf8bf647, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  suoni:
+  - name: colpo
+    clip: {fileID: 8300000, guid: a0f3dcbfad78a1c4ba985b95f4a60cf3, type: 3}
+    volume: 0.3
+    spacialBlend: 0
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: pozione1
+    clip: {fileID: 8300000, guid: fe5a8d1b325185f46be24f6eb8fd3445, type: 3}
+    volume: 0.3
+    spacialBlend: 0
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: pozione2
+    clip: {fileID: 8300000, guid: bcd311000fecf6a47834d0a2913efebf, type: 3}
+    volume: 0.3
+    spacialBlend: 0
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: paga
+    clip: {fileID: 8300000, guid: 2f240fd88fce29b40a53201ea21f81db, type: 3}
+    volume: 0.3
+    spacialBlend: 0
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: tema1
+    clip: {fileID: 8300000, guid: d63a0db6ab1179347a01e02e48a18c82, type: 3}
+    volume: 0.2
+    spacialBlend: 0
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: tema2
+    clip: {fileID: 8300000, guid: 70e6127c9de162740aa832d361b1dae5, type: 3}
+    volume: 0.2
+    spacialBlend: 0
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+--- !u!4 &1031570788
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031570786}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.0365427, y: 1.8923578, z: 1.2886207}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1046624688
 GameObject:
   m_ObjectHideFlags: 0

@@ -96,3 +96,4 @@ MonoBehaviour:
   punti: 0
   vita: 0
   attacco: 0
+  nomeSuono: colpo

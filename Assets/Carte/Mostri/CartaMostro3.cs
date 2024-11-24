@@ -18,5 +18,6 @@ public class CartaMostro3: baseCarta
 	public override void ogniTurno()
 	{
 		_pino.GetComponent<PopinoController>().camVita(_pino.GetComponent<PopinoController>().getVita() - attacco);
+		base.action();
 	}
 }

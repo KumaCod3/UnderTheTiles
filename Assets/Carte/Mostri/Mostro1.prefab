@@ -152,3 +152,4 @@ MonoBehaviour:
   punti: 3
   vita: 2
   attacco: 1
+  nomeSuono: colpo
