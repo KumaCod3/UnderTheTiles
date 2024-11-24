@@ -6,9 +6,8 @@ public class CartaBonus2: baseCarta
 		base.Start();
 		gameObject.GetComponent<GestCarta>().cambia1("+" + vita);
 		gameObject.GetComponent<GestCarta>().cambia4("" + punti);
-		tipo = "bonus";
 		nome = "Pozione Vita";
-		descrizione = "Guadagni 2 punto vita e 1 punto movimento.";
+		//		descrizione = "Guadagni 2 punto vita e 1 punto movimento.";
 	}
 
 	public override void action()

@@ -4,9 +4,7 @@ public class CartaMostro3: baseCarta
 	private void Start()
 	{
 		base.Start();
-		tipo = "nemico";
 		nome = "Mostro 3";
-		descrizione = "Se mi uccidi guadagi punti. Ad ogni turno ti attacco da lontano";
 	}
 
 	public override void action()

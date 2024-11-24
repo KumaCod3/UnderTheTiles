@@ -1,5 +1,5 @@
-using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InGameManager: MonoBehaviour
 {
@@ -10,10 +10,10 @@ public class InGameManager: MonoBehaviour
 	void Update()
 	{
 	}
-	public void setDesc(string tip, string nom, string des)
+	public void setDesc(string nom)
 	{
-		gameObject.transform.GetChild(1).GetComponent<TextMeshProUGUI>().SetText(tip);
-		gameObject.transform.GetChild(2).GetComponent<TextMeshProUGUI>().SetText(nom);
-		gameObject.transform.GetChild(3).GetComponent<TextMeshProUGUI>().SetText(des);
+		gameObject.transform.GetChild(0).GetComponent<Image>().sprite = (gameObject.GetComponent<Descrizioni>().getSp(nom));
+		/*		gameObject.transform.GetChild(2).GetComponent<TextMeshProUGUI>().SetText(nom);
+				gameObject.transform.GetChild(3).GetComponent<TextMeshProUGUI>().SetText(des);*/
 	}
 }

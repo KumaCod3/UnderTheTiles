@@ -7,9 +7,7 @@ public class Popino: baseCarta
 	private void Start()
 	{
 		base.Start();
-		tipo = "TU";
-		nome = "TU";
-		descrizione = "Tu.";
+		nome = "Popino";
 		dir = gameObject.transform.position;
 		gameObject.GetComponent<GestCarta>().cambia1("" + _pino.GetComponent<PopinoController>().getVita());
 		gameObject.GetComponent<GestCarta>().cambia2("" + _pino.GetComponent<PopinoController>().getAttacco());

@@ -27,10 +27,8 @@ public class GameManager: MonoBehaviour
 			int yy = Mathf.RoundToInt(cor.y);
 			if (BoardManager.checkLim(yy, xx) && BoardManager.sopraCarta(yy, xx).GetComponent<baseCarta>())
 			{
-				string tip = BoardManager.sopraCarta(yy, xx).GetComponent<baseCarta>().tipo;
 				string nom = BoardManager.sopraCarta(yy, xx).GetComponent<baseCarta>().nome;
-				string desc = BoardManager.sopraCarta(yy, xx).GetComponent<baseCarta>().descrizione;
-				_IGM.setDesc(tip, nom, desc);
+				_IGM.setDesc(nom);
 			}
 			else
 			{
@@ -48,10 +46,8 @@ public class GameManager: MonoBehaviour
 
 	private void svuotaDesc()
 	{
-		string tip = "";
 		string nom = "";
-		string desc = "";
-		_IGM.setDesc(tip, nom, desc);
+		_IGM.setDesc(nom);
 	}
 	public static bool eInPausa()
 	{
