@@ -9,7 +9,7 @@ public class Suono
 	[Range(0f, 1f)]
 	public float volume;
 	[Range(0f, 1f)]
-	public float spacialBlend;
+	public float pitch;
 
 	public bool loop;
 	public bool playOnAwake;

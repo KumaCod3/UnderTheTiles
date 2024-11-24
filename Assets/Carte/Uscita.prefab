@@ -104,3 +104,4 @@ MonoBehaviour:
   punti: 3
   vita: 0
   attacco: 0
+  nomeSuono: vinto

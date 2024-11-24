@@ -74,6 +74,7 @@ public class GestCarta: MonoBehaviour
 	private IEnumerator specEmuori()
 	{
 		yield return new WaitForSeconds(.2f);
+		FindObjectOfType<AudioManager>().PlaySound("muori");
 		muori();
 		anim.SetBool("Morto", true);
 	}
