@@ -19,6 +19,9 @@ public class TutorialScript: MonoBehaviour
 	{
 		gameObject.transform.GetChild(indx).gameObject.SetActive(false);
 		GameManager.play();
+
+		FindObjectOfType<AudioManager>().StopSound("intro");
+		FindObjectOfType<AudioManager>().cambiaTema();
 		gameObject.SetActive(false);
 	}
 }

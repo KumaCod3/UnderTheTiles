@@ -3256,8 +3256,15 @@ MonoBehaviour:
     loop: 0
     playOnAwake: 0
     source: {fileID: 0}
+  - name: intro
+    clip: {fileID: 8300000, guid: 2fdaa6e8475c69e43a361dba59eec234, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
   - name: tema1
-    clip: {fileID: 8300000, guid: d63a0db6ab1179347a01e02e48a18c82, type: 3}
+    clip: {fileID: 8300000, guid: 947305f126640c34a82fd5eac76f1749, type: 3}
     volume: 0.2
     pitch: 1
     loop: 1
@@ -3944,7 +3951,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1280681925
 RectTransform:
   m_ObjectHideFlags: 0

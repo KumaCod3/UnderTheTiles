@@ -30,7 +30,7 @@ public class AudioManager: MonoBehaviour
 			s.source.playOnAwake = s.playOnAwake;
 		}
 		tema = false;
-		cambiaTema();
+		PlaySound("intro");
 	}
 	public void PlaySound(string nome)
 	{
