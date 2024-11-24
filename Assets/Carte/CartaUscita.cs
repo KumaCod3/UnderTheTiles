@@ -17,7 +17,9 @@ public class CartaUscita: baseCarta
 		base.action();
 		Debug.Log("WINN ");
 		gameObject.GetComponent<GestCarta>().esciPorta();
+		GameManager.vinto = 1;
 		GameManager.pausa();
+
 	}
 	public override void ogniTurno()
 	{

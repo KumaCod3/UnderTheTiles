@@ -5,8 +5,11 @@ public class TODO: MonoBehaviour
 	/*
 	 * 
 	 * 
+	 * SCHERMATE WIN / LOSE
 	 * 
-	 * sistema salvataggio e levelUP
+	 * 
+	 * 
+	 * sistema salvataggio e levelUP	(reflection???)
 	 *		mancano da decidere bonus liveli e aspetto!
 	 * 
 	 * 
@@ -16,8 +19,8 @@ public class TODO: MonoBehaviour
 	 * 
 	 * 
 	 * 
-	 * fai altri mostri 4 5 e 6???
-	 * pozione gialla???
+	 * --fai altri mostri 4 5 e 6???
+	 * --pozione gialla???
 	 * 	 
 	 * 	 
 	 * 	 

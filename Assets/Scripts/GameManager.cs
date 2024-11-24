@@ -6,10 +6,15 @@ public class GameManager: MonoBehaviour
 	public static PopinoController pino;
 	public InGameManager _IGM;
 	private static bool inPausa = false;
+	public GameObject scherFin;
+	public static int vinto;
+
 
 	private void Start()
 	{
+		scherFin.SetActive(false);
 		punti = 0;
+		vinto = 0;
 		svuotaDesc();
 	}
 
@@ -42,6 +47,14 @@ public class GameManager: MonoBehaviour
 				}
 			}
 		}
+		else if (vinto == 1)
+		{
+			vito(true);
+		}
+		else if (vinto == 2)
+		{
+			vito(false);
+		}
 	}
 
 	private void svuotaDesc()
@@ -61,6 +74,16 @@ public class GameManager: MonoBehaviour
 	{
 		inPausa = false;
 	}
+
+	public void vito(bool win)
+	{
+
+		scherFin.SetActive(true);
+		//	scherFin.GetComponent<Finale>().spegni();
+		scherFin.GetComponent<Finale>().SetWin(win);
+	}
+
+
 	/*	public void cambiaScema(int x)
 		{
 			PlayerPrefs.SetInt("attacco", PopinoController.attacco);
