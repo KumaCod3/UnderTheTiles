@@ -58,7 +58,8 @@ public class PopinoController: MonoBehaviour
 					{
 						BoardManager.scacchiera[x][y].GetComponent<baseCarta>().action();
 						Destroy(BoardManager.scacchiera[x][y].gameObject);
-						BoardManager.scacchiera[x][y] = null;
+						//	BoardManager.scacchiera[x][y] = null;
+						BoardManager.metVuot(x, y);
 					}
 					tr = true;
 				}
@@ -78,7 +79,14 @@ public class PopinoController: MonoBehaviour
 
 	private bool bloccato(int x, int y)
 	{
-		return (prova(x - 1, y) || prova(x + 1, y) || prova(x, y - 1) || prova(x, y + 1));
+		bool uno = prova(x - 1, y);
+		bool due = prova(x + 1, y);
+		bool tre = prova(x, y - 1);
+		bool quat = prova(x, y + 1);
+
+
+		return uno || due || tre || quat;
+		//		return (prova(x - 1, y) || prova(x + 1, y) || prova(x, y - 1) || prova(x, y + 1));
 	}
 	internal void setXY(int x, int y)
 	{

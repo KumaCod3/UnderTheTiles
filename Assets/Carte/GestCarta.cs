@@ -27,7 +27,7 @@ public class GestCarta: MonoBehaviour
 			TD.SetText("");
 		BD = gameObject.transform.GetChild(0).GetChild(3).GetComponent<TextMeshProUGUI>();
 		if (gameObject.GetComponent<baseCarta>().punti != 0)
-			BD.SetText("-" + gameObject.GetComponent<baseCarta>().punti);
+			BD.SetText("" + gameObject.GetComponent<baseCarta>().punti);
 		else
 			BD.SetText("");
 		anim = gameObject.GetComponent<Animator>();

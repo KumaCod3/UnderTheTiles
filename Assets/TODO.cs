@@ -30,5 +30,16 @@ public class TODO: MonoBehaviour
 	 * audio
 	 * 
 	 * 
+	 * 
+	 * UPGRADE:
+	 *	\costo 11
+	 *		VITA BASE +1 (vita +1 in popinocontroller)
+	 *		1 salto (jump=true in BoardManager)
+	 *			
+	 *			ah
+	 *		
+	 *	
+	 * 
+	 * 
 	 */
 }

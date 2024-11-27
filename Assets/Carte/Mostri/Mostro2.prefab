@@ -90,10 +90,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0c56c9ef83633447aed64885ce27fe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipo: 
   nome: 
-  descrizione: 
   punti: 3
-  vita: 1
+  vita: 2
   attacco: 1
   nomeSuono: colpo

@@ -14,9 +14,12 @@ public class TutorialScript: MonoBehaviour
 	{
 		gameObject.transform.GetChild(indx).gameObject.SetActive(false);
 		indx--;
+		FindObjectOfType<AudioManager>().PlaySound("click");
+
 	}
 	public void inizia()
 	{
+		FindObjectOfType<AudioManager>().PlaySound("click");
 		gameObject.transform.GetChild(indx).gameObject.SetActive(false);
 		GameManager.play();
 
