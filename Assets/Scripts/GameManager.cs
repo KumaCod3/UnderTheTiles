@@ -7,12 +7,24 @@ public class GameManager: MonoBehaviour
 	public InGameManager _IGM;
 	private static bool inPausa = false;
 	public GameObject scherFin;
+	public GameObject scherTut;
 	public static int vinto;
 
 
 	private void Start()
 	{
 		scherFin.SetActive(false);
+		if (PopinoLivelli.tutorial && scherTut != null)
+		{
+			scherTut.SetActive(true);
+		}
+		else if (scherTut != null)
+		{
+			scherTut.SetActive(false);
+			play();
+		}
+
+
 		punti = 0;
 		vinto = 0;
 		svuotaDesc();
@@ -100,4 +112,15 @@ public class GameManager: MonoBehaviour
 				PopinoController.vita = PlayerPrefs.GetInt("vita");
 			punti = PlayerPrefs.GetInt("punti");
 		}*/
+
+	public void startAgain()
+	{
+		int indice = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+		UnityEngine.SceneManagement.SceneManager.LoadScene(indice);
+	}
+	public void nextt()
+	{
+		int indice = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+		UnityEngine.SceneManagement.SceneManager.LoadScene(indice + 1);
+	}
 }

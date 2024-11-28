@@ -4,38 +4,41 @@ public class PopinoController: MonoBehaviour
 {
 	public static int posX;
 	public static int posY;
-	private static int attacco = 1;
-	private static int vita = 2;
 
 	public void camVita(int v)
 	{
-		vita = v;
-		gameObject.GetComponent<GestCarta>().cambia1("" + vita);
+		if (PopinoLivelli.shield)
+		{
+			PopinoLivelli.shield = false;
+			return;
+		}
+		gameObject.GetComponent<Popino>().vita = v;
+		gameObject.GetComponent<GestCarta>().cambia1("" + gameObject.GetComponent<Popino>().vita, true);
 	}
 	public void camAtta(int a)
 	{
-		attacco = a;
-		gameObject.GetComponent<GestCarta>().cambia2("" + attacco);
+		gameObject.GetComponent<Popino>().attacco = a;
+		gameObject.GetComponent<GestCarta>().cambia2("" + gameObject.GetComponent<Popino>().attacco, true);
 	}
 	public void camPun(int p)
 	{
 		GameManager.punti = p;
-		gameObject.GetComponent<GestCarta>().cambia4("" + GameManager.punti);
+		gameObject.GetComponent<GestCarta>().cambia4("" + GameManager.punti, true);
 	}
 	public int getVita()
 	{
-		return vita;
+		return gameObject.GetComponent<Popino>().vita;
 	}
 	public int getAttacco()
 	{
-		return attacco;
+		return gameObject.GetComponent<Popino>().attacco;
 	}
 
 	void Update()
 	{
 		if (!GameManager.eInPausa())
 		{
-			if (vita <= 0)
+			if (gameObject.GetComponent<Popino>().vita <= 0)
 			{
 				Debug.Log("GAME OVEEEEER!!!!");
 				GameManager.pausa();
@@ -140,7 +143,7 @@ public class PopinoController: MonoBehaviour
 		if (!bloccato(x, y))
 		{
 			Debug.Log("BLOCCATOOOO");
-			vita = 0;
+			gameObject.GetComponent<Popino>().vita = 0;
 			GameManager.pausa();
 		}
 		BoardManager.passaTurno();

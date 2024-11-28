@@ -6,7 +6,7 @@ public class TutorialScript: MonoBehaviour
 
 	void Start()
 	{
-		indx = 6;
+		indx = gameObject.transform.childCount - 1;
 		GameManager.pausa();
 	}
 
@@ -26,5 +26,6 @@ public class TutorialScript: MonoBehaviour
 		FindObjectOfType<AudioManager>().StopSound("intro");
 		FindObjectOfType<AudioManager>().cambiaTema();
 		gameObject.SetActive(false);
+		PopinoLivelli.tutorial = false;
 	}
 }

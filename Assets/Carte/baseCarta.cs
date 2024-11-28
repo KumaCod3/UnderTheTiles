@@ -10,7 +10,7 @@ public abstract class baseCarta: MonoBehaviour
 	public string nomeSuono;
 	protected GameObject _pino;
 
-	protected void Start()
+	public virtual void Start()
 	{
 		_pino = GameObject.FindWithTag("Player");
 	}

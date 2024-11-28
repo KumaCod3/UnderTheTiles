@@ -1,7 +1,7 @@
 public class CartaMostro1: baseCarta
 {
 
-	private void Start()
+	public override void Start()
 	{
 		base.Start();
 		nome = "Mostro 1";

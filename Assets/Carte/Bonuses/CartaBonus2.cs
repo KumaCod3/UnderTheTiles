@@ -1,11 +1,11 @@
 public class CartaBonus2: baseCarta
 {
 
-	private void Start()
+	public override void Start()
 	{
 		base.Start();
-		gameObject.GetComponent<GestCarta>().cambia1("+" + vita);
-		gameObject.GetComponent<GestCarta>().cambia4("" + punti);
+		gameObject.GetComponent<GestCarta>().cambia1("+" + vita, false);
+		gameObject.GetComponent<GestCarta>().cambia4("" + punti, false);
 		nome = "Pozione Vita";
 	}
 

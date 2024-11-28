@@ -122,7 +122,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7988489524255852010, guid: 557dfa4df519dfd49b58e1f3b6d72b61, type: 3}
   m_PrefabInstance: {fileID: 7720576603190019682}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3379225100256257865
+--- !u!114 &7552427408388108699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430145880208065416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc6a789ae79cfb940aa41e9ae6af7e1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1343644788889401383
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,15 +151,3 @@ MonoBehaviour:
   vita: 0
   attacco: 0
   nomeSuono: 
---- !u!114 &7552427408388108699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 430145880208065416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc6a789ae79cfb940aa41e9ae6af7e1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

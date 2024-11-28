@@ -13,6 +13,7 @@ public class GestCarta: MonoBehaviour
 
 	void Start()
 	{
+
 		TS = gameObject.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
 		if (gameObject.GetComponent<baseCarta>().vita != 0)
 			TS.SetText("" + gameObject.GetComponent<baseCarta>().vita);
@@ -35,21 +36,30 @@ public class GestCarta: MonoBehaviour
 
 	}
 
-	public void cambia1(string s)
+	public void cambia1(string s, bool routine)
 	{
-		StartCoroutine(cambia("vita", s, TS));
+		if (routine)
+			StartCoroutine(cambia("vita", s, TS));
+		else
+			TS.SetText(s);
 	}
-	public void cambia2(string s)
+	public void cambia2(string s, bool routine)
 	{
-		StartCoroutine(cambia("attacco", s, TD));
+		if (routine)
+			StartCoroutine(cambia("attacco", s, TD));
+		else
+			TD.SetText(s);
 	}
-	public void cambia3(string s)
+	public void cambia3(string s, bool routine)
 	{
 		// aaaa
 	}
-	public void cambia4(string s)
+	public void cambia4(string s, bool routine)
 	{
-		StartCoroutine(cambia("uscita", s, BD));
+		if (routine)
+			StartCoroutine(cambia("uscita", s, BD));
+		else
+			BD.SetText(s);
 	}
 
 	private IEnumerator cambia(string par, string val, TextMeshProUGUI tex)

@@ -1,10 +1,10 @@
 public class CartaBonus1: baseCarta
 {
-	private void Start()
+	public override void Start()
 	{
 		base.Start();
-		gameObject.GetComponent<GestCarta>().cambia2("+" + attacco);
-		gameObject.GetComponent<GestCarta>().cambia4("+" + punti);
+		gameObject.GetComponent<GestCarta>().cambia2("+" + attacco, false);
+		gameObject.GetComponent<GestCarta>().cambia4("+" + punti, false);
 		nome = "Pozione Attacco";
 	}
 

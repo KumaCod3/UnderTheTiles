@@ -1,6 +1,6 @@
 public class Usata: baseCarta
 {
-	private void Start()
+	public override void Start()
 	{
 		base.Start();
 		nome = "Vuota";

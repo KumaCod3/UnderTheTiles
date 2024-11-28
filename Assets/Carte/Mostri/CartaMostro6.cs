@@ -1,6 +1,6 @@
 public class CartaMostro6: baseCarta
 {
-	private void Start()
+	public override void Start()
 	{
 		base.Start();
 		nome = "Mostro 6";

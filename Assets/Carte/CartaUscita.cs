@@ -2,10 +2,10 @@ using UnityEngine;
 public class CartaUscita: baseCarta
 {
 
-	private void Start()
+	public override void Start()
 	{
 		base.Start();
-		gameObject.GetComponent<GestCarta>().cambia4("-" + punti);
+		//gameObject.GetComponent<GestCarta>().cambia4("-" + punti, false);
 		nome = "Uscita";
 	}
 

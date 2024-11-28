@@ -15,7 +15,6 @@ public class BoardManager: MonoBehaviour
 	public GameObject usa;
 	public static GameObject usata;
 	public static GameObject pop;
-	static bool jump = false;
 
 	private void Start()
 	{
@@ -58,18 +57,18 @@ public class BoardManager: MonoBehaviour
 		int xD = Mathf.Abs(PopinoController.posX - x);
 		int yD = Mathf.Abs(PopinoController.posY - y);
 
-		if (xD + yD > 1 && !jump)  // se non adiacente
+		if (xD + yD > 1 && !PopinoLivelli.jump)  // se non adiacente
 		{
 			return false;
 
 		}
-		if (xD + yD > 2 && jump)
+		if (xD + yD > 2 && PopinoLivelli.jump)
 		{
 			return false;
 		}
-		if (xD + yD > 1 && jump)
+		if (xD + yD > 1 && PopinoLivelli.jump)
 		{
-			jump = false;
+			PopinoLivelli.jump = false;
 			return true;
 		}
 		return true;
