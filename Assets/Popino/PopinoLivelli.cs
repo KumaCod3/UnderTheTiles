@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PopinoLivelli: MonoBehaviour
@@ -10,13 +11,16 @@ public class PopinoLivelli: MonoBehaviour
 	public static bool bo1;
 	public static PopinoLivelli instance;
 
+	public static List<int> abilita;
 
+	public static int[] uscite = { 3, 11, 5 };
 
 	void Awake()
 	{
 		if (instance == null)
 		{
 			instance = this;
+			abilita = new List<int>();
 		}
 		else
 		{
@@ -30,11 +34,13 @@ public class PopinoLivelli: MonoBehaviour
 	{
 		shield = true;
 		Finale.scelta = 1;
+		abilita.Add(1);
 	}
 	public static void scelta2()
 	{
 		jump = true;
 		Finale.scelta = 2;
+		abilita.Add(2);
 	}
 }
 

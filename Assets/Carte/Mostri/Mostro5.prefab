@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: f543cb814a47a174fad96af95d4a4c87, type: 3}
     - target: {fileID: 6385078686525204243, guid: 557dfa4df519dfd49b58e1f3b6d72b61, type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7988489524255852010, guid: 557dfa4df519dfd49b58e1f3b6d72b61, type: 3}
       propertyPath: m_Name
@@ -90,10 +90,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a0640e555791f84d821cef1df5490b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipo: 
   nome: 
-  descrizione: 
-  punti: 0
-  vita: 0
-  attacco: 0
+  punti: 3
+  vita: 3
+  attacco: 3
   nomeSuono: colpo

@@ -57,7 +57,7 @@ public class PopinoController: MonoBehaviour
 			{
 				if (!BoardManager.scacchiera[x][y].GetComponent<Usata>())
 				{
-					if (BoardManager.scacchiera[x][y].GetComponent<CartaMostro2>())
+					if (BoardManager.scacchiera[x][y].GetComponent<CartaMostro2>() /*|| BoardManager.scacchiera[x][y].GetComponent<CartaMostro3>()*/)
 					{
 						BoardManager.scacchiera[x][y].GetComponent<baseCarta>().action();
 						Destroy(BoardManager.scacchiera[x][y].gameObject);
@@ -110,7 +110,10 @@ public class PopinoController: MonoBehaviour
 
 				yield return new WaitForSeconds(.3f);
 				pt2(x, y);
-
+				yield return new WaitForSeconds(.1f);
+				BoardManager.passaTurno();
+				yield return new WaitForSeconds(.1f);
+				GameManager.play();
 			}
 			//else if (BoardManager.scacchiera[x][y].GetComponent<Usata>() && GameManager.punti >= BoardManager.scacchiera[x][y].GetComponent<Usata>().punti)
 			//{
@@ -146,7 +149,6 @@ public class PopinoController: MonoBehaviour
 			gameObject.GetComponent<Popino>().vita = 0;
 			GameManager.pausa();
 		}
-		BoardManager.passaTurno();
-		GameManager.play();
+
 	}
 }

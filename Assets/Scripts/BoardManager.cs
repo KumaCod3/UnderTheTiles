@@ -46,7 +46,6 @@ public class BoardManager: MonoBehaviour
 	}
 	private void Update()
 	{
-		//		riempi();
 	}
 	static public bool check(int x, int y)
 	{
@@ -124,5 +123,14 @@ public class BoardManager: MonoBehaviour
 				}
 			}
 		}
+	}
+	public static void scambia(int[] cor, int[] cornew)
+	{
+		GameObject old = scacchiera[cor[1]][cor[0]];
+		GameObject neww = scacchiera[cornew[1]][cornew[0]];
+
+		scacchiera[cor[1]][cor[0]] = neww;
+		scacchiera[cornew[1]][cornew[0]] = old;
+
 	}
 }

@@ -23,7 +23,10 @@ public class GameManager: MonoBehaviour
 			scherTut.SetActive(false);
 			play();
 		}
-
+		else
+		{
+			play();
+		}
 
 		punti = 0;
 		vinto = 0;

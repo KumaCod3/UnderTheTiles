@@ -11,7 +11,7 @@ public class GestCarta: MonoBehaviour
 	Animator anim;
 	Animator anum;
 
-	void Start()
+	public void Start()
 	{
 
 		TS = gameObject.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();

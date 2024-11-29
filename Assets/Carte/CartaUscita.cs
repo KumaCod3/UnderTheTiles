@@ -5,12 +5,15 @@ public class CartaUscita: baseCarta
 	public override void Start()
 	{
 		base.Start();
-		//gameObject.GetComponent<GestCarta>().cambia4("-" + punti, false);
+		punti = PopinoLivelli.uscite[PopinoLivelli.abilita.Count];
+		gameObject.GetComponent<GestCarta>().cambia4("-" + punti, false);
 		nome = "Uscita";
 	}
 
 	private void Update()
 	{
+		punti = PopinoLivelli.uscite[PopinoLivelli.abilita.Count];
+		gameObject.GetComponent<GestCarta>().cambia4("-" + punti, false);
 	}
 	public override void action()
 	{
