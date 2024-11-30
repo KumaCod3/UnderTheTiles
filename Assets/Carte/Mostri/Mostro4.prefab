@@ -12,12 +12,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 7d7ac0df34cc47f45bc5c27b73aef6b2, type: 3}
     - target: {fileID: 6385078686525204243, guid: 557dfa4df519dfd49b58e1f3b6d72b61, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6385078686525204243, guid: 557dfa4df519dfd49b58e1f3b6d72b61, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7988489524255852010, guid: 557dfa4df519dfd49b58e1f3b6d72b61, type: 3}
       propertyPath: m_Name
-      value: Mostro3
+      value: Mostro4
       objectReference: {fileID: 0}
     - target: {fileID: 7988489524255852020, guid: 557dfa4df519dfd49b58e1f3b6d72b61, type: 3}
       propertyPath: m_RootOrder
@@ -82,10 +86,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1edfe2a47c312644c893f2f1d8153ab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipo: 
   nome: 
-  descrizione: 
   punti: 1
   vita: 1
   attacco: 1
   nomeSuono: colpo
+  speed: 1.5

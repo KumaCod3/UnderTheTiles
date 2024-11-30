@@ -5,6 +5,7 @@ public class TODO: MonoBehaviour
 	/*
 	 * 
 	 * 
+	 * 
 	 *		mancano da decidere bonus liveli e aspetto x LIV  2 e 3
 	 * 
 	 * 

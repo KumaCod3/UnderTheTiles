@@ -63,12 +63,34 @@ public abstract class baseCarta: MonoBehaviour
 		}
 	}
 
-	public IEnumerator scivola(Vector3 fin)
+	public IEnumerator scivola(Vector3 fin, float vel)
 	{
 		while (Vector3.Distance(fin, transform.position) > 0.01)
 		{
-			transform.position = Vector3.MoveTowards(transform.position, fin, 2f * Time.deltaTime);
+			transform.position = Vector3.MoveTowards(transform.position, fin, vel * Time.deltaTime);
 			yield return new WaitForEndOfFrame();
 		}
 	}
+	public IEnumerator scivolaTorna(Vector3 fin, float vel, Vector3 orig)
+	{
+		yield return scivola(fin, vel);
+		FindObjectOfType<AudioManager>().PlaySound(nomeSuono);
+		yield return scivola(orig, vel);
+		gameObject.GetComponent<GestCarta>().scura();
+	}
+	public IEnumerator attk(bool t)
+	{
+		gameObject.GetComponent<GestCarta>().schiara();
+		yield return scivolaTorna(Popino.dir, 7f, transform.position);
+		if (t)
+		{
+
+			combat();
+		}
+		else
+		{
+			_pino.GetComponent<PopinoController>().camVita(_pino.GetComponent<PopinoController>().getVita() - attacco);
+		}
+	}
+
 }

@@ -1,7 +1,7 @@
 using UnityEngine;
 public class Popino: baseCarta
 {
-	Vector3 dir;
+	static public Vector3 dir;
 
 	public void Awake()
 	{

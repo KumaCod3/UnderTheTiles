@@ -53,11 +53,10 @@ public class PopinoController: MonoBehaviour
 			{
 				if (!BoardManager.scacchiera[x][y].GetComponent<Usata>())
 				{
-					if (BoardManager.scacchiera[x][y].GetComponent<CartaMostro2>() /*|| BoardManager.scacchiera[x][y].GetComponent<CartaMostro3>()*/)
+					if (BoardManager.scacchiera[x][y].GetComponent<CartaMostro2>())
 					{
-						BoardManager.scacchiera[x][y].GetComponent<baseCarta>().action();
-						Destroy(BoardManager.scacchiera[x][y].gameObject);
-						//	BoardManager.scacchiera[x][y] = null;
+						BoardManager.scacchiera[x][y].GetComponent<baseCarta>().StartCoroutine(BoardManager.scacchiera[x][y].GetComponent<baseCarta>().attk(true));
+						//Destroy(BoardManager.scacchiera[x][y].gameObject);
 						BoardManager.metVuot(x, y);
 					}
 					tr = true;

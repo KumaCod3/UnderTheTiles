@@ -78,7 +78,7 @@ public class BoardManager: MonoBehaviour
 	}
 	static public bool checkLim(int x, int y)
 	{
-		if (x >= scacchiera.Length || y >= scacchiera[0].Length || x < 0 || y < 0 || scacchiera[x][y].GetComponent<Vuota>())    // se fuori scacchiera
+		if (x >= scacchiera.Length || y >= scacchiera[0].Length || x < 0 || y < 0 || scacchiera[x][y] == null || scacchiera[x][y].GetComponent<Vuota>())    // se fuori scacchiera
 		{
 			return false;
 		}
@@ -137,7 +137,7 @@ public class BoardManager: MonoBehaviour
 		scacchiera[cor[1]][cor[0]] = neww;
 		scacchiera[cornew[1]][cornew[0]] = old;
 
-		neww.GetComponent<baseCarta>().StartCoroutine(neww.GetComponent<baseCarta>().scivola(new Vector3(cor[0], cor[1], -1)));
+		neww.GetComponent<baseCarta>().StartCoroutine(neww.GetComponent<baseCarta>().scivola(new Vector3(cor[0], cor[1], -1), 2));
 		//	neww.transform.position = new Vector3(cor[0], cor[1], -1);
 
 		//neww.transform.position = Vector3.MoveTowards(neww.transform.position, new Vector3(cor[0], cor[1], -1), 50f * Time.deltaTime);

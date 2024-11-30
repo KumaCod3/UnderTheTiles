@@ -10,12 +10,11 @@ public class CartaMostro4: baseCarta
 	public override void action()
 	{
 		base.action();
-
 		combat();
 	}
 	public override void ogniTurno()
 	{
-		_pino.GetComponent<PopinoController>().camVita(_pino.GetComponent<PopinoController>().getVita() - attacco);
-		base.action();
+		StartCoroutine(attk(false));
+
 	}
 }

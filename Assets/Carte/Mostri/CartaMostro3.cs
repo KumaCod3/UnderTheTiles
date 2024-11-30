@@ -51,8 +51,8 @@ public class CartaMostro3: baseCarta
 
 			if ((distanzaX() + distanzaY()) <= 1)
 			{
-				//action();
-				Debug.Log("Attaccoooo");
+				BoardManager.metVuot(possY, possX);
+				action();
 			}
 			turno++;
 		}

@@ -342,7 +342,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &76498767
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2948,6 +2948,8 @@ GameObject:
   - component: {fileID: 668972257}
   - component: {fileID: 668972256}
   - component: {fileID: 668972255}
+  - component: {fileID: 668972259}
+  - component: {fileID: 668972258}
   m_Layer: 5
   m_Name: avanti
   m_TagString: Untagged
@@ -2972,9 +2974,9 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.3568949}
-  m_AnchorMax: {x: 0.58437496, y: 0.48655257}
-  m_AnchoredPosition: {x: -50, y: 2.5}
-  m_SizeDelta: {x: -370, y: -35}
+  m_AnchorMax: {x: 0.463125, y: 0.48655257}
+  m_AnchoredPosition: {x: 0, y: 2.5}
+  m_SizeDelta: {x: -200, y: -35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &668972255
 MonoBehaviour:
@@ -3070,6 +3072,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 668972253}
   m_CullTransparentMesh: 1
+--- !u!114 &668972258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668972253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 668972259}
+          m_TargetAssemblyTypeName: SceltaButt, Assembly-CSharp
+          m_MethodName: higgg
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 668972259}
+          m_TargetAssemblyTypeName: SceltaButt, Assembly-CSharp
+          m_MethodName: spent
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &668972259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668972253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad78a375b1dda5c4b930afb8d60747dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &692480163
 GameObject:
   m_ObjectHideFlags: 0
@@ -3630,6 +3689,8 @@ GameObject:
   - component: {fileID: 794787534}
   - component: {fileID: 794787533}
   - component: {fileID: 794787532}
+  - component: {fileID: 794787536}
+  - component: {fileID: 794787535}
   m_Layer: 5
   m_Name: avanti
   m_TagString: Untagged
@@ -3654,9 +3715,9 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.58437496, y: 0.13700001}
-  m_AnchoredPosition: {x: -50, y: 2.5}
-  m_SizeDelta: {x: -370, y: -35}
+  m_AnchorMax: {x: 0.4493749, y: 0.13700001}
+  m_AnchoredPosition: {x: 0, y: 2.5}
+  m_SizeDelta: {x: -200, y: -35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &794787532
 MonoBehaviour:
@@ -3752,6 +3813,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 794787530}
   m_CullTransparentMesh: 1
+--- !u!114 &794787535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794787530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 794787536}
+          m_TargetAssemblyTypeName: SceltaButt, Assembly-CSharp
+          m_MethodName: higgg
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 794787536}
+          m_TargetAssemblyTypeName: SceltaButt, Assembly-CSharp
+          m_MethodName: spent
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &794787536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794787530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad78a375b1dda5c4b930afb8d60747dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &801131990
 GameObject:
   m_ObjectHideFlags: 0
@@ -4319,6 +4437,8 @@ GameObject:
   - component: {fileID: 938097374}
   - component: {fileID: 938097373}
   - component: {fileID: 938097372}
+  - component: {fileID: 938097376}
+  - component: {fileID: 938097375}
   m_Layer: 5
   m_Name: fineTut
   m_TagString: Untagged
@@ -4342,10 +4462,10 @@ RectTransform:
   m_Father: {fileID: 584629129}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.3925, y: 0}
+  m_AnchorMin: {x: 0.51812506, y: 0}
   m_AnchorMax: {x: 1, y: 0.13700001}
-  m_AnchoredPosition: {x: 50, y: 2.5}
-  m_SizeDelta: {x: -370, y: -35}
+  m_AnchoredPosition: {x: 0, y: 2.5}
+  m_SizeDelta: {x: -200, y: -35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &938097372
 MonoBehaviour:
@@ -4441,6 +4561,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 938097370}
   m_CullTransparentMesh: 1
+--- !u!114 &938097375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938097370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 938097376}
+          m_TargetAssemblyTypeName: SceltaButt, Assembly-CSharp
+          m_MethodName: higgg
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 938097376}
+          m_TargetAssemblyTypeName: SceltaButt, Assembly-CSharp
+          m_MethodName: spent
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &938097376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938097370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad78a375b1dda5c4b930afb8d60747dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &988987987
 GameObject:
   m_ObjectHideFlags: 0
@@ -4945,7 +5122,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.48655257}
-  m_AnchorMax: {x: 0.58437496, y: 0.8605575}
+  m_AnchorMax: {x: 0.55125004, y: 0.8605575}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5548,6 +5725,8 @@ GameObject:
   - component: {fileID: 1218733088}
   - component: {fileID: 1218733087}
   - component: {fileID: 1218733086}
+  - component: {fileID: 1218733090}
+  - component: {fileID: 1218733089}
   m_Layer: 5
   m_Name: avanti
   m_TagString: Untagged
@@ -5572,9 +5751,9 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.3568949}
-  m_AnchorMax: {x: 0.58437496, y: 0.48655257}
-  m_AnchoredPosition: {x: -50, y: 2.5}
-  m_SizeDelta: {x: -370, y: -35}
+  m_AnchorMax: {x: 0.49125, y: 0.48655257}
+  m_AnchoredPosition: {x: 0, y: 2.5}
+  m_SizeDelta: {x: -200, y: -35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1218733086
 MonoBehaviour:
@@ -5670,6 +5849,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1218733084}
   m_CullTransparentMesh: 1
+--- !u!114 &1218733089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218733084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1218733090}
+          m_TargetAssemblyTypeName: SceltaButt, Assembly-CSharp
+          m_MethodName: higgg
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1218733090}
+          m_TargetAssemblyTypeName: SceltaButt, Assembly-CSharp
+          m_MethodName: spent
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1218733090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218733084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad78a375b1dda5c4b930afb8d60747dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1249820837
 GameObject:
   m_ObjectHideFlags: 0
@@ -5854,7 +6090,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1280681925
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6263,9 +6499,9 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.13700001}
-  m_AnchorMax: {x: 0.58437496, y: 0.5122177}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.53624994, y: 0.5146699}
+  m_AnchoredPosition: {x: 0, y: -1}
+  m_SizeDelta: {x: 0, y: -2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1373228207
 MonoBehaviour:
@@ -6478,6 +6714,8 @@ GameObject:
   - component: {fileID: 1442396383}
   - component: {fileID: 1442396382}
   - component: {fileID: 1442396381}
+  - component: {fileID: 1442396385}
+  - component: {fileID: 1442396384}
   m_Layer: 5
   m_Name: dinuovo
   m_TagString: Untagged
@@ -6600,6 +6838,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1442396379}
   m_CullTransparentMesh: 1
+--- !u!114 &1442396384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442396379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1442396385}
+          m_TargetAssemblyTypeName: SceltaButt, Assembly-CSharp
+          m_MethodName: higgg
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1442396385}
+          m_TargetAssemblyTypeName: SceltaButt, Assembly-CSharp
+          m_MethodName: spent
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1442396385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442396379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad78a375b1dda5c4b930afb8d60747dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1477469996
 GameObject:
   m_ObjectHideFlags: 0
@@ -6612,6 +6907,8 @@ GameObject:
   - component: {fileID: 1477470000}
   - component: {fileID: 1477469999}
   - component: {fileID: 1477469998}
+  - component: {fileID: 1477470002}
+  - component: {fileID: 1477470001}
   m_Layer: 5
   m_Name: avanti
   m_TagString: Untagged
@@ -6635,10 +6932,10 @@ RectTransform:
   m_Father: {fileID: 1631922938}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.3325, y: 0.3568949}
+  m_AnchorMin: {x: 0.525625, y: 0.3568949}
   m_AnchorMax: {x: 1, y: 0.48655257}
-  m_AnchoredPosition: {x: 50, y: 2.5}
-  m_SizeDelta: {x: -370, y: -35}
+  m_AnchoredPosition: {x: 0, y: 2.5}
+  m_SizeDelta: {x: -200, y: -35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1477469998
 MonoBehaviour:
@@ -6734,6 +7031,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1477469996}
   m_CullTransparentMesh: 1
+--- !u!114 &1477470001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477469996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1477470002}
+          m_TargetAssemblyTypeName: SceltaButt, Assembly-CSharp
+          m_MethodName: higgg
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1477470002}
+          m_TargetAssemblyTypeName: SceltaButt, Assembly-CSharp
+          m_MethodName: spent
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1477470002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477469996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad78a375b1dda5c4b930afb8d60747dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1569065191
 GameObject:
   m_ObjectHideFlags: 0
@@ -6753,7 +7107,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1569065192
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7014,7 +7368,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1631922938
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8034,7 +8388,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1863202042
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8364,7 +8718,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1901020222
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8661,7 +9015,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1930584855
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8839,8 +9193,8 @@ RectTransform:
   m_Father: {fileID: 1631922938}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.3325, y: 0.48655257}
-  m_AnchorMax: {x: 1, y: 0.86300004}
+  m_AnchorMin: {x: 0.425625, y: 0.48655257}
+  m_AnchorMax: {x: 1, y: 0.8801149}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -9411,7 +9765,7 @@ RectTransform:
   m_Father: {fileID: 584629129}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.3925, y: 0.13700001}
+  m_AnchorMin: {x: 0.41625002, y: 0.13700001}
   m_AnchorMax: {x: 1, y: 0.5122177}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
@@ -9466,6 +9820,8 @@ GameObject:
   - component: {fileID: 2146884952}
   - component: {fileID: 2146884951}
   - component: {fileID: 2146884950}
+  - component: {fileID: 2146884954}
+  - component: {fileID: 2146884953}
   m_Layer: 5
   m_Name: avanti
   m_TagString: Untagged
@@ -9588,3 +9944,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2146884948}
   m_CullTransparentMesh: 1
+--- !u!114 &2146884953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146884948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2146884954}
+          m_TargetAssemblyTypeName: SceltaButt, Assembly-CSharp
+          m_MethodName: higgg
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2146884954}
+          m_TargetAssemblyTypeName: SceltaButt, Assembly-CSharp
+          m_MethodName: spent
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &2146884954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146884948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad78a375b1dda5c4b930afb8d60747dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

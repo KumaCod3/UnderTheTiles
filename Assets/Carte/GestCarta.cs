@@ -8,6 +8,7 @@ public class GestCarta: MonoBehaviour
 	TextMeshProUGUI BS;
 	TextMeshProUGUI TD;
 	TextMeshProUGUI BD;
+	SpriteRenderer selfIM;
 	Animator anim;
 	Animator anum;
 
@@ -33,6 +34,8 @@ public class GestCarta: MonoBehaviour
 			BD.SetText("");
 		anim = gameObject.GetComponent<Animator>();
 		anum = gameObject.transform.GetChild(0).GetComponent<Animator>();
+
+		selfIM = gameObject.transform.GetChild(1).GetComponent<SpriteRenderer>();
 
 	}
 
@@ -121,5 +124,14 @@ public class GestCarta: MonoBehaviour
 		muori();
 		anim.SetBool("EsciPort", true);
 		anum.SetTrigger("uscita");
+	}
+
+	public void schiara()
+	{
+		selfIM.material.color = new Color(1, 1, 1, 0.5f);
+	}
+	public void scura()
+	{
+		selfIM.material.color = new Color(1, 1, 1, 1);
 	}
 }
