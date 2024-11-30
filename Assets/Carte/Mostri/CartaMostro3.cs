@@ -8,7 +8,7 @@ public class CartaMostro3: baseCarta
 
 	public Vector3 dir;
 	float speed = 1.5f;
-
+	int turno;
 	public override void Start()
 	{
 		base.Start();
@@ -16,6 +16,7 @@ public class CartaMostro3: baseCarta
 		dir = transform.position;
 		possX = (int)dir.x;
 		possY = (int)dir.y;
+		turno = 0;
 	}
 	public void setDir(int x, int y)
 	{
@@ -33,25 +34,28 @@ public class CartaMostro3: baseCarta
 	}
 	public override void ogniTurno()
 	{
-		Debug.Log("turno");
-		if ((distanzaX() + distanzaY()) > 1)
+		if (BoardManager.turnoGiusto(turno))
 		{
-			if ((distanzaY() > distanzaX()))
+			if ((distanzaX() + distanzaY()) > 1)
 			{
-				Debug.Log("muovo x");
-				muoviX();
+				if ((distanzaY() > distanzaX()))
+				{
+					//					Debug.Log("muovo x");
+					muoviX();
+				}
+				else
+				{
+					//					Debug.Log("muovo y");
+					muoviY();
+				}
 			}
-			else
-			{
-				Debug.Log("muovo y");
-				muoviY();
-			}
-		}
 
-		if ((distanzaX() + distanzaY()) <= 1)
-		{
-			//action();
-			Debug.Log("Attaccoooo");
+			if ((distanzaX() + distanzaY()) <= 1)
+			{
+				//action();
+				Debug.Log("Attaccoooo");
+			}
+			turno++;
 		}
 	}
 

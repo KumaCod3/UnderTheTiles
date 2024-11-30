@@ -16,6 +16,8 @@ public class BoardManager: MonoBehaviour
 	public static GameObject usata;
 	public static GameObject pop;
 
+	static int turno;
+
 	private void Start()
 	{
 		usata = usa;
@@ -26,6 +28,8 @@ public class BoardManager: MonoBehaviour
 		scacchiera[4] = riga4;
 		scacchiera[5] = riga5;
 		scacchiera[6] = riga6;
+
+		turno = 0;
 
 		for (int y = 0; y < scacchiera.Length; y++)
 		{
@@ -123,6 +127,7 @@ public class BoardManager: MonoBehaviour
 				}
 			}
 		}
+		turno++;
 	}
 	public static void scambia(int[] cor, int[] cornew)
 	{
@@ -132,5 +137,10 @@ public class BoardManager: MonoBehaviour
 		scacchiera[cor[1]][cor[0]] = neww;
 		scacchiera[cornew[1]][cornew[0]] = old;
 
+	}
+
+	public static bool turnoGiusto(int x)
+	{
+		return turno == x;
 	}
 }
