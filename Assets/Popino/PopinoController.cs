@@ -4,16 +4,19 @@ public class PopinoController: MonoBehaviour
 {
 	public static int posX;
 	public static int posY;
+	public static int vitta;
+	static bool ebloccato;
 
 	public void camVita(int v)
 	{
-		if (PopinoLivelli.shield)
+		if (PopinoLivelli.shield && v < vitta && !ebloccato)
 		{
 			PopinoLivelli.shield = false;
 			return;
 		}
-		gameObject.GetComponent<Popino>().vita = v;
-		gameObject.GetComponent<GestCarta>().cambia1("" + gameObject.GetComponent<Popino>().vita, true);
+		//		gameObject.GetComponent<Popino>().vita = v;
+		vitta = v;
+		gameObject.GetComponent<GestCarta>().cambia1("" + vitta, true);
 	}
 	public void camAtta(int a)
 	{
@@ -27,7 +30,8 @@ public class PopinoController: MonoBehaviour
 	}
 	public int getVita()
 	{
-		return gameObject.GetComponent<Popino>().vita;
+		return vitta;
+		//		gameObject.GetComponent<Popino>().vita;
 	}
 	public int getAttacco()
 	{
@@ -36,15 +40,7 @@ public class PopinoController: MonoBehaviour
 
 	void Update()
 	{
-		if (!GameManager.eInPausa())
-		{
-			if (gameObject.GetComponent<Popino>().vita <= 0)
-			{
-				Debug.Log("GAME OVEEEEER!!!!");
-				GameManager.pausa();
-				gameObject.GetComponent<GestCarta>().diePop();
-			}
-		}
+
 	}
 
 
@@ -109,11 +105,27 @@ public class PopinoController: MonoBehaviour
 				GameManager.pausa();
 
 				yield return new WaitForSeconds(.3f);
-				pt2(x, y);
+
+
+				//				pt2(x, y);
+				Destroy(BoardManager.scacchiera[x][y].gameObject);
+				BoardManager.scacchiera[x][y] = BoardManager.pop;
+				BoardManager.scacchiera[x][y].GetComponent<Popino>().setDir(x, y);
+				BoardManager.metVuot(posX, posY);
+				posX = x;
+				posY = y;
+				if (!bloccato(x, y))
+				{
+					GameManager.play();
+					vitta = 0;
+					ebloccato = true;
+					yield break;
+				}
 				yield return new WaitForSeconds(.1f);
 				BoardManager.passaTurno();
 				yield return new WaitForSeconds(.1f);
 				GameManager.play();
+
 			}
 			//else if (BoardManager.scacchiera[x][y].GetComponent<Usata>() && GameManager.punti >= BoardManager.scacchiera[x][y].GetComponent<Usata>().punti)
 			//{
@@ -147,8 +159,6 @@ public class PopinoController: MonoBehaviour
 		{
 			Debug.Log("BLOCCATOOOO");
 			gameObject.GetComponent<Popino>().vita = 0;
-			GameManager.pausa();
 		}
-
 	}
 }

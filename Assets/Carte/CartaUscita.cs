@@ -1,10 +1,11 @@
 using UnityEngine;
 public class CartaUscita: baseCarta
 {
-
+	bool test;
 	public override void Start()
 	{
 		base.Start();
+		test = true;
 		punti = PopinoLivelli.uscite[PopinoLivelli.abilita.Count];
 		gameObject.GetComponent<GestCarta>().cambia4("-" + punti, false);
 		nome = "Uscita";
@@ -12,8 +13,12 @@ public class CartaUscita: baseCarta
 
 	private void Update()
 	{
-		punti = PopinoLivelli.uscite[PopinoLivelli.abilita.Count];
-		gameObject.GetComponent<GestCarta>().cambia4("-" + punti, false);
+		if (test)
+		{
+			punti = PopinoLivelli.uscite[PopinoLivelli.abilita.Count];
+			gameObject.GetComponent<GestCarta>().cambia4("-" + punti, false);
+			test = false;
+		}
 	}
 	public override void action()
 	{

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public abstract class baseCarta: MonoBehaviour
@@ -9,7 +10,7 @@ public abstract class baseCarta: MonoBehaviour
 	public int attacco;
 	public string nomeSuono;
 	protected GameObject _pino;
-
+	public float speed = 1.5f;
 	public virtual void Start()
 	{
 		_pino = GameObject.FindWithTag("Player");
@@ -59,6 +60,15 @@ public abstract class baseCarta: MonoBehaviour
 		{
 			_pino.GetComponent<PopinoController>().camPun(GameManager.punti + punti);
 			gameObject.GetComponent<GestCarta>().die();
+		}
+	}
+
+	public IEnumerator scivola(Vector3 fin)
+	{
+		while (Vector3.Distance(fin, transform.position) > 0.01)
+		{
+			transform.position = Vector3.MoveTowards(transform.position, fin, 2f * Time.deltaTime);
+			yield return new WaitForEndOfFrame();
 		}
 	}
 }

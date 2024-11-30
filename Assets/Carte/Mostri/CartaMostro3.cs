@@ -7,7 +7,6 @@ public class CartaMostro3: baseCarta
 	public int possY;
 
 	public Vector3 dir;
-	float speed = 1.5f;
 	int turno;
 	public override void Start()
 	{
@@ -80,9 +79,6 @@ public class CartaMostro3: baseCarta
 	{
 		int x = passo(possX, PopinoController.posY);
 		dir = new Vector3(x, dir.y, dir.z);
-		possX = (int)dir.x;
-		possY = (int)dir.y;
-
 		int[] cor = { possX, possY };
 		possX = (int)dir.x;
 		possY = (int)dir.y;

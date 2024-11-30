@@ -137,6 +137,10 @@ public class BoardManager: MonoBehaviour
 		scacchiera[cor[1]][cor[0]] = neww;
 		scacchiera[cornew[1]][cornew[0]] = old;
 
+		neww.GetComponent<baseCarta>().StartCoroutine(neww.GetComponent<baseCarta>().scivola(new Vector3(cor[0], cor[1], -1)));
+		//	neww.transform.position = new Vector3(cor[0], cor[1], -1);
+
+		//neww.transform.position = Vector3.MoveTowards(neww.transform.position, new Vector3(cor[0], cor[1], -1), 50f * Time.deltaTime);
 	}
 
 	public static bool turnoGiusto(int x)

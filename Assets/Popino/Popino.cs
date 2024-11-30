@@ -2,13 +2,14 @@ using UnityEngine;
 public class Popino: baseCarta
 {
 	Vector3 dir;
-	float speed = 1.5f;
 
 	public void Awake()
 	{
 		//	base.Start();
 		nome = "Popino";
 		dir = gameObject.transform.position;
+
+		PopinoController.vitta = 2;
 		vita = 2;
 		attacco = 1;
 		punti = GameManager.punti;
@@ -22,6 +23,17 @@ public class Popino: baseCarta
 	private void Update()
 	{
 		transform.position = Vector3.MoveTowards(transform.position, dir, speed * Time.deltaTime);
+		if (!GameManager.eInPausa())
+		{
+			if (PopinoController.vitta <= 0)
+			{
+				Debug.Log("GAME OVEEEEER!!!! pop");
+
+				gameObject.GetComponent<GestCarta>().diePop();
+				GameManager.pausa();
+			}
+		}
+
 	}
 	public override void ogniTurno()
 	{

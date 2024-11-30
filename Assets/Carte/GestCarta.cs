@@ -59,7 +59,11 @@ public class GestCarta: MonoBehaviour
 		if (routine)
 			StartCoroutine(cambia("uscita", s, BD));
 		else
+			if (BD != null)
+		{
+
 			BD.SetText(s);
+		}
 	}
 
 	private IEnumerator cambia(string par, string val, TextMeshProUGUI tex)

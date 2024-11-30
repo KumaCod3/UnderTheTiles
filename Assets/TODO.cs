@@ -4,9 +4,6 @@ public class TODO: MonoBehaviour
 {
 	/*
 	 * 
-	 * fai mostro 3
-	 * 
-	 * 
 	 * 
 	 *		mancano da decidere bonus liveli e aspetto x LIV  2 e 3
 	 * 
