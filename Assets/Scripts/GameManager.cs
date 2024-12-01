@@ -35,6 +35,10 @@ public class GameManager: MonoBehaviour
 
 	private void Update()
 	{
+		if (Input.GetKeyDown(KeyCode.Escape))
+		{
+			Application.Quit();
+		}
 		if (!eInPausa())
 		{
 			if (punti < 0)
@@ -124,6 +128,7 @@ public class GameManager: MonoBehaviour
 	public void nextt()
 	{
 		int indice = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+		AudioManager.tm = !AudioManager.tm;
 		UnityEngine.SceneManagement.SceneManager.LoadScene(indice + 1);
 	}
 

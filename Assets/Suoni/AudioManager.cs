@@ -6,13 +6,15 @@ public class AudioManager: MonoBehaviour
 
 	public static AudioManager instance;
 
-	bool tema;
+	bool tema = false;
+	public static bool tm = false;
 
 	void Awake()
 	{
 		if (instance == null)
 		{
 			instance = this;
+
 		}
 		else
 		{
@@ -29,9 +31,17 @@ public class AudioManager: MonoBehaviour
 			s.source.loop = s.loop;
 			s.source.playOnAwake = s.playOnAwake;
 		}
-		tema = false;
 		PlaySound("intro");
 	}
+
+	private void Update()
+	{
+		if (tema != tm)
+		{
+			cambiaTema();
+		}
+	}
+
 	public void PlaySound(string nome)
 	{
 		foreach (Suono s in suoni)

@@ -42,6 +42,16 @@ public class PopinoLivelli: MonoBehaviour
 		resettAbilita();
 	}
 
+	public void cheat()
+	{
+		if (abilita.Count == 0)
+		{
+			abilita.Add(2);
+			abilita.Add(2);
+			abilita.Add(2);
+		}
+		resettAbilita();
+	}
 
 	public static void scelta1()
 	{
