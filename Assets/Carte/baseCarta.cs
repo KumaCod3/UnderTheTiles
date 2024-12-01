@@ -51,13 +51,16 @@ public abstract class baseCarta: MonoBehaviour
 
 	public void combat()
 	{
-		while (vita > 0 && _pino.GetComponent<PopinoController>().getVita() > 0)
+		int vitaMostro = vita;
+		int vitapopo = _pino.GetComponent<PopinoController>().getVita();
+		while (vitaMostro > 0 && vitapopo > 0)
 		{
-			vita = vita - _pino.GetComponent<PopinoController>().getAttacco();
-			_pino.GetComponent<PopinoController>().camVita(_pino.GetComponent<PopinoController>().getVita() - attacco);
+			vitaMostro = vitaMostro - _pino.GetComponent<PopinoController>().getAttacco();
+			vitapopo = vitapopo - attacco;
 		}
-		if (vita <= 0)
+		if (vitaMostro <= 0)
 		{
+			_pino.GetComponent<PopinoController>().camVita(vitapopo);
 			_pino.GetComponent<PopinoController>().camPun(GameManager.punti + punti);
 			gameObject.GetComponent<GestCarta>().die();
 		}

@@ -14,7 +14,6 @@ public class PopinoController: MonoBehaviour
 			PopinoLivelli.shield = false;
 			return;
 		}
-		//		gameObject.GetComponent<Popino>().vita = v;
 		vitta = v;
 		gameObject.GetComponent<GestCarta>().cambia1("" + vitta, true);
 	}
@@ -101,6 +100,7 @@ public class PopinoController: MonoBehaviour
 			if (!BoardManager.scacchiera[x][y].GetComponent<Usata>() || GameManager.punti >= BoardManager.scacchiera[x][y].GetComponent<Usata>().punti)
 			{
 				BoardManager.scacchiera[x][y].GetComponent<baseCarta>().action();
+				//				Debug.Log("act trigger da " + BoardManager.scacchiera[x][y].name);
 				GameManager.pausa();
 
 				yield return new WaitForSeconds(.3f);
