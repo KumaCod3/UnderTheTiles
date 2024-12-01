@@ -1479,7 +1479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2634,8 +2634,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4284079871
+  m_fontColor: {r: 1, g: 0.87058824, b: 0.34901962, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3993,7 +3993,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: nice Play
+  m_text: 'Loved Playng with you.
+
+    Hope you enjoyed this little experiment of
+    mine.
+
+    Let me know if you find something broken!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: be4ac928ac8eccb46a1cd21f387de19a, type: 2}
   m_sharedMaterial: {fileID: -5593141880562273278, guid: be4ac928ac8eccb46a1cd21f387de19a, type: 2}
@@ -4081,13 +4086,14 @@ GameObject:
   - component: {fileID: 1217685411}
   - component: {fileID: 1217685413}
   - component: {fileID: 1217685412}
+  - component: {fileID: 1217685414}
   m_Layer: 5
   m_Name: win
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1217685411
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4148,6 +4154,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1217685410}
   m_CullTransparentMesh: 1
+--- !u!114 &1217685414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217685410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfea36efbbce78f48bddd50192e89964, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  testo: {fileID: 750239227}
 --- !u!1 &1249820837
 GameObject:
   m_ObjectHideFlags: 0
@@ -6388,9 +6407,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 13507786}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: nextt
+      - m_Target: {fileID: 1031570789}
+        m_TargetAssemblyTypeName: PopinoLivelli, Assembly-CSharp
+        m_MethodName: sceltaFIN
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

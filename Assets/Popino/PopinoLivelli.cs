@@ -33,12 +33,12 @@ public class PopinoLivelli: MonoBehaviour
 		}
 		DontDestroyOnLoad(gameObject);
 
-		if (abilita.Count == 0)
-		{
-			abilita.Add(2);
-			abilita.Add(2);
-			abilita.Add(2);
-		}
+		//if (abilita.Count == 0)
+		//{
+		//	abilita.Add(2);
+		//	abilita.Add(2);
+		//	abilita.Add(2);
+		//}
 		resettAbilita();
 	}
 
@@ -80,6 +80,10 @@ public class PopinoLivelli: MonoBehaviour
 		alchimista = true;
 		Finale.scelta = 2;
 		abilita.Add(2);
+	}
+	public static void sceltaFIN()
+	{
+		Finale.scelta = 1;
 	}
 	public static void winTutto()
 	{
@@ -126,6 +130,52 @@ public class PopinoLivelli: MonoBehaviour
 					break;
 			}
 		}
+	}
+
+	public static List<string> descrizFin()
+	{
+		List<string> lista = new List<string>();
+
+		for (int i = 0; i < abilita.Count; i++)
+		{
+			switch (i)
+			{
+				case 0:
+					if (abilita[i] == 1)
+					{
+						lista.Add("Warrior");
+					}
+					else if (abilita[i] == 2)
+					{
+						lista.Add("Angel");
+					}
+					break;
+				case 1:
+					if (abilita[i] == 1)
+					{
+						lista.Add("Vampire");
+					}
+					else if (abilita[i] == 2)
+					{
+						lista.Add("Archaeologist");
+					}
+					break;
+				case 2:
+					if (abilita[i] == 1)
+					{
+						lista.Add("Mage");
+					}
+					else if (abilita[i] == 2)
+					{
+						lista.Add("Alchemist");
+					}
+					break;
+				default:
+					break;
+			}
+		}
+
+		return lista;
 	}
 }
 
