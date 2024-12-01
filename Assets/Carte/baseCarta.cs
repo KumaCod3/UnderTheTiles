@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -55,6 +56,10 @@ public abstract class baseCarta: MonoBehaviour
 		int vitapopo = _pino.GetComponent<PopinoController>().getVita();
 		while (vitaMostro > 0 && vitapopo > 0)
 		{
+			if (PopinoLivelli.lancia)
+			{
+				colpodietro();
+			}
 			vitaMostro = vitaMostro - _pino.GetComponent<PopinoController>().getAttacco();
 			vitapopo = vitapopo - attacco;
 		}
@@ -63,6 +68,10 @@ public abstract class baseCarta: MonoBehaviour
 			_pino.GetComponent<PopinoController>().camVita(vitapopo);
 			_pino.GetComponent<PopinoController>().camPun(GameManager.punti + punti);
 			gameObject.GetComponent<GestCarta>().die();
+			if (PopinoLivelli.vampiro)
+			{
+				_pino.GetComponent<PopinoController>().camVita(_pino.GetComponent<PopinoController>().getVita() + 1);
+			}
 		}
 	}
 
@@ -95,5 +104,39 @@ public abstract class baseCarta: MonoBehaviour
 			_pino.GetComponent<PopinoController>().camVita(_pino.GetComponent<PopinoController>().getVita() - attacco);
 		}
 	}
+	public void togli1()
+	{
+		vita--;
+		gameObject.GetComponent<GestCarta>().cambia1("" + vita, true);
+	}
 
+	public void colpodietro()
+	{
+		int x = -1;
+		int y = -1;
+		if (gameObject.transform.position.x == _pino.transform.position.x)
+		{
+			x = (int)gameObject.transform.position.x;
+			int diff = (int)gameObject.transform.position.y - (int)_pino.transform.position.y;
+			y = (int)gameObject.transform.position.y + diff;
+		}
+		else if (gameObject.transform.position.y == _pino.transform.position.y)
+		{
+			y = (int)gameObject.transform.position.y;
+			int diff = (int)gameObject.transform.position.x - (int)_pino.transform.position.x;
+			x = (int)gameObject.transform.position.x + diff;
+
+		}
+		baseCarta dietro = null;
+		try
+		{
+			dietro = BoardManager.scacchiera[y][x].GetComponent<baseCarta>();
+		}
+		catch (Exception e) { }
+		if (dietro != null && dietro.gameObject.tag.Equals("mostro"))
+		{
+			dietro.togli1();
+		}
+
+	}
 }

@@ -8,8 +8,8 @@ public class PopinoLivelli: MonoBehaviour
 	public static bool jump = false;
 	public static bool shield = false;
 
-	public static bool bo1;
-	public static bool bo2;
+	public static bool vampiro = false;
+	public static bool lancia = false;
 
 
 
@@ -32,7 +32,7 @@ public class PopinoLivelli: MonoBehaviour
 		DontDestroyOnLoad(gameObject);
 
 		abilita.Add(1);
-		//		abilita.Add(2);
+		abilita.Add(2);
 
 
 		resettAbilita();
@@ -54,13 +54,13 @@ public class PopinoLivelli: MonoBehaviour
 
 	public static void scelta3()
 	{
-		//	shield = true;
+		vampiro = true;
 		Finale.scelta = 1;
 		abilita.Add(1);
 	}
 	public static void scelta4()
 	{
-		//	jump = true;
+		lancia = true;
 		Finale.scelta = 2;
 		abilita.Add(2);
 	}
@@ -101,11 +101,11 @@ public class PopinoLivelli: MonoBehaviour
 				case 1:
 					if (abilita[i] == 1)
 					{
-						//	shield = true;
+						vampiro = true;
 					}
 					else if (abilita[i] == 2)
 					{
-						//	jump = true;
+						lancia = true;
 					}
 					break;
 				case 2:

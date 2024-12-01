@@ -186,7 +186,7 @@ MonoBehaviour:
   riga0:
   - {fileID: 5901437902140358246, guid: 5d6fadff1e46bfb419cc9dc702654b11, type: 3}
   - {fileID: 4463204479857030328, guid: 6efabe32aa660504c830e33553677467, type: 3}
-  - {fileID: 1501680494981389063, guid: 04e5874ba1e66d74f8008f8182a903c9, type: 3}
+  - {fileID: 0}
   - {fileID: 4463204479857030328, guid: 6efabe32aa660504c830e33553677467, type: 3}
   - {fileID: 6747966138824906946, guid: a79a2ed4ae08f2243987d16bd872f6ab, type: 3}
   - {fileID: 0}
@@ -203,20 +203,20 @@ MonoBehaviour:
   - {fileID: 4463204479857030328, guid: 6efabe32aa660504c830e33553677467, type: 3}
   - {fileID: 694843437037572031, guid: 44130c145af51994591f0d114a9a9bf3, type: 3}
   - {fileID: 4463204479857030328, guid: 6efabe32aa660504c830e33553677467, type: 3}
-  - {fileID: 6747966138824906946, guid: a79a2ed4ae08f2243987d16bd872f6ab, type: 3}
+  - {fileID: 8467484249169421452, guid: 240a3e5e86841b343a506dcface2ce1f, type: 3}
   - {fileID: 694843437037572031, guid: 44130c145af51994591f0d114a9a9bf3, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   riga3:
   - {fileID: 4851553975013955252, guid: e0252f041a2c518428ad5d9fca2f1620, type: 3}
   - {fileID: 4463204479857030328, guid: 6efabe32aa660504c830e33553677467, type: 3}
-  - {fileID: 6747966138824906946, guid: a79a2ed4ae08f2243987d16bd872f6ab, type: 3}
-  - {fileID: 4463204479857030328, guid: 6efabe32aa660504c830e33553677467, type: 3}
+  - {fileID: 8467484249169421452, guid: 240a3e5e86841b343a506dcface2ce1f, type: 3}
+  - {fileID: 8467484249169421452, guid: 240a3e5e86841b343a506dcface2ce1f, type: 3}
   - {fileID: 6747966138824906946, guid: a79a2ed4ae08f2243987d16bd872f6ab, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   riga4:
-  - {fileID: 1501680494981389063, guid: 04e5874ba1e66d74f8008f8182a903c9, type: 3}
+  - {fileID: 0}
   - {fileID: 4463204479857030328, guid: 6efabe32aa660504c830e33553677467, type: 3}
   - {fileID: 4463204479857030328, guid: 6efabe32aa660504c830e33553677467, type: 3}
   - {fileID: 6747966138824906946, guid: a79a2ed4ae08f2243987d16bd872f6ab, type: 3}
