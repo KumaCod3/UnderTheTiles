@@ -35,6 +35,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BonusAtt
       objectReference: {fileID: 0}
+    - target: {fileID: 7988489524255852010, guid: 557dfa4df519dfd49b58e1f3b6d72b61, type: 3}
+      propertyPath: m_TagString
+      value: pozione
+      objectReference: {fileID: 0}
     - target: {fileID: 7988489524255852020, guid: 557dfa4df519dfd49b58e1f3b6d72b61, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -106,10 +110,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22d279091694f054abf8e872fd122948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipo: 
   nome: 
-  descrizione: 
   punti: 1
   vita: 0
   attacco: 1
   nomeSuono: pozione1
+  speed: 1.5
+  fulminato: 0

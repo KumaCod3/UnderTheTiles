@@ -29,11 +29,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7988489524255852020, guid: 557dfa4df519dfd49b58e1f3b6d72b61, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7988489524255852020, guid: 557dfa4df519dfd49b58e1f3b6d72b61, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7988489524255852020, guid: 557dfa4df519dfd49b58e1f3b6d72b61, type: 3}
       propertyPath: m_LocalPosition.z
@@ -101,5 +101,5 @@ MonoBehaviour:
   nomeSuono: colpo
   speed: 1.5
   possX: 2
-  possY: 0
-  dir: {x: 0, y: 2, z: -1}
+  possY: 2
+  dir: {x: 2, y: 2, z: -1}

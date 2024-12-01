@@ -102,3 +102,4 @@ MonoBehaviour:
   vita: 0
   attacco: 0
   nomeSuono: 
+  speed: 1.5

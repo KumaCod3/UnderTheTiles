@@ -76,10 +76,10 @@ public class GestCarta: MonoBehaviour
 		tex.SetText(val);
 	}
 
-	//public void wiggle()
-	//{
-	//	anim.SetTrigger("Attacca");
-	//}
+	public void wiggle()
+	{
+		anim.SetTrigger("Attacca");
+	}
 	public void die()
 	{
 		anim.SetBool("Morto", true);

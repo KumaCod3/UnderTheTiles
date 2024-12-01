@@ -12,10 +12,11 @@ public class Popino: baseCarta
 		PopinoController.vitta = 2;
 		vita = 2;
 		attacco = 1;
+		if (PopinoLivelli.lancia)
+		{
+			attacco++;
+		}
 		punti = GameManager.punti;
-		//		gameObject.GetComponent<GestCarta>().cambia1("" + _pino.GetComponent<PopinoController>().getVita(), false);
-		//		gameObject.GetComponent<GestCarta>().cambia2("" + _pino.GetComponent<PopinoController>().getAttacco(), false);
-		//		gameObject.GetComponent<GestCarta>().cambia4("" + GameManager.punti, false);
 	}
 	public override void action()
 	{
@@ -27,7 +28,7 @@ public class Popino: baseCarta
 		{
 			if (PopinoController.vitta <= 0)
 			{
-				Debug.Log("GAME OVEEEEER!!!! pop");
+				Debug.Log("GAME OVEEEEER!!!!");
 
 				gameObject.GetComponent<GestCarta>().diePop();
 				GameManager.pausa();

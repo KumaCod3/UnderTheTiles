@@ -126,4 +126,10 @@ public class GameManager: MonoBehaviour
 		int indice = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
 		UnityEngine.SceneManagement.SceneManager.LoadScene(indice + 1);
 	}
+
+	public static void fineee()
+	{
+		Destroy(FindObjectOfType<AudioManager>().gameObject);
+		UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+	}
 }

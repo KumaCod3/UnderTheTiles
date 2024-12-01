@@ -11,12 +11,14 @@ public class PopinoLivelli: MonoBehaviour
 	public static bool vampiro = false;
 	public static bool lancia = false;
 
+	public static bool mago = false;
+	public static bool alchimista = false;
 
 
 	public static PopinoLivelli instance;
 	public static List<int> abilita;
 
-	public static int[] uscite = { 3, 11, 20 };
+	public static int[] uscite = { 3, 11, 24, 30 };
 
 	void Awake()
 	{
@@ -31,10 +33,12 @@ public class PopinoLivelli: MonoBehaviour
 		}
 		DontDestroyOnLoad(gameObject);
 
-		abilita.Add(1);
-		abilita.Add(2);
-
-
+		if (abilita.Count == 0)
+		{
+			abilita.Add(2);
+			abilita.Add(2);
+			abilita.Add(2);
+		}
 		resettAbilita();
 	}
 
@@ -67,13 +71,13 @@ public class PopinoLivelli: MonoBehaviour
 
 	public static void scelta5()
 	{
-		//	shield = true;
+		mago = true;
 		Finale.scelta = 1;
 		abilita.Add(1);
 	}
 	public static void scelta6()
 	{
-		//	jump = true;
+		alchimista = true;
 		Finale.scelta = 2;
 		abilita.Add(2);
 	}
@@ -111,11 +115,11 @@ public class PopinoLivelli: MonoBehaviour
 				case 2:
 					if (abilita[i] == 1)
 					{
-						//	shield = true;
+						mago = true;
 					}
 					else if (abilita[i] == 2)
 					{
-						//	jump = true;
+						alchimista = true;
 					}
 					break;
 				default:

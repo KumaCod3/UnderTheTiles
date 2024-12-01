@@ -55,7 +55,6 @@ public class PopinoController: MonoBehaviour
 					if (BoardManager.scacchiera[x][y].GetComponent<CartaMostro2>())
 					{
 						BoardManager.scacchiera[x][y].GetComponent<baseCarta>().StartCoroutine(BoardManager.scacchiera[x][y].GetComponent<baseCarta>().attk(true));
-						//Destroy(BoardManager.scacchiera[x][y].gameObject);
 						BoardManager.metVuot(x, y);
 					}
 					tr = true;
@@ -100,13 +99,16 @@ public class PopinoController: MonoBehaviour
 			if (!BoardManager.scacchiera[x][y].GetComponent<Usata>() || GameManager.punti >= BoardManager.scacchiera[x][y].GetComponent<Usata>().punti)
 			{
 				BoardManager.scacchiera[x][y].GetComponent<baseCarta>().action();
+				if (BoardManager.scacchiera[x][y].tag.Equals("mostro") && PopinoLivelli.mago)
+				{
+					PopinoLivelli.mago = false;
+					BoardManager.fulminaDa(x, y);
+				}
 				//				Debug.Log("act trigger da " + BoardManager.scacchiera[x][y].name);
 				GameManager.pausa();
 
 				yield return new WaitForSeconds(.3f);
 
-
-				//				pt2(x, y);
 				Destroy(BoardManager.scacchiera[x][y].gameObject);
 				BoardManager.scacchiera[x][y] = BoardManager.pop;
 				BoardManager.scacchiera[x][y].GetComponent<Popino>().setDir(x, y);

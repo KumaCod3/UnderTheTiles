@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class BoardManager: MonoBehaviour
@@ -57,6 +58,16 @@ public class BoardManager: MonoBehaviour
 		{
 			return false;
 		}
+		if (x == PopinoController.posX && y == PopinoController.posY && PopinoLivelli.alchimista)
+		{
+			trinca(x, y);
+			PopinoLivelli.alchimista = false;
+			return false;
+		}
+		if (x == PopinoController.posX && y == PopinoController.posY)
+		{
+			return false;
+		}
 		int xD = Mathf.Abs(PopinoController.posX - x);
 		int yD = Mathf.Abs(PopinoController.posY - y);
 
@@ -75,6 +86,50 @@ public class BoardManager: MonoBehaviour
 			return true;
 		}
 		return true;
+	}
+	static void trinca(int x, int y)
+	{
+		Debug.Log("bevo");
+		try
+		{
+			if (scacchiera[x + 1][y].tag.Equals("pozione"))
+			{
+				scacchiera[x + 1][y].GetComponent<baseCarta>().action();
+				scacchiera[x + 1][y].GetComponent<GestCarta>().wiggle();
+				metVuot(x + 1, y);
+			}
+		}
+		catch (Exception e) { }
+		try
+		{
+			if (scacchiera[x - 1][y].tag.Equals("pozione"))
+			{
+				scacchiera[x - 1][y].GetComponent<baseCarta>().action();
+				scacchiera[x - 1][y].GetComponent<GestCarta>().wiggle();
+				metVuot(x - 1, y);
+			}
+		}
+		catch (Exception e) { }
+		try
+		{
+			if (scacchiera[x][y + 1].tag.Equals("pozione"))
+			{
+				scacchiera[x][y + 1].GetComponent<baseCarta>().action();
+				scacchiera[x][y + 1].GetComponent<GestCarta>().wiggle();
+				metVuot(x, y + 1);
+			}
+		}
+		catch (Exception e) { }
+		try
+		{
+			if (scacchiera[x][y - 1].tag.Equals("pozione"))
+			{
+				scacchiera[x][y - 1].GetComponent<baseCarta>().action();
+				scacchiera[x][y - 1].GetComponent<GestCarta>().wiggle();
+				metVuot(x, y - 1);
+			}
+		}
+		catch (Exception e) { }
 	}
 	static public bool checkLim(int x, int y)
 	{
@@ -146,5 +201,68 @@ public class BoardManager: MonoBehaviour
 	public static bool turnoGiusto(int x)
 	{
 		return turno == x;
+	}
+
+	public static void fulminaDa(int x, int y)
+	{
+		int[] cor = fulmine(x, y);
+		if (cor != null)
+		{
+			fulminaDa(cor[0], cor[1]);
+		}
+	}
+
+	public static int[] fulmine(int x, int y)
+	{
+		try
+		{
+			if (scacchiera[x + 1][y].tag.Equals("mostro") && !scacchiera[x + 1][y].GetComponent<baseCarta>().fulminato)
+			{
+				scacchiera[x + 1][y].GetComponent<baseCarta>().togli1();
+				scacchiera[x + 1][y].GetComponent<baseCarta>().fulminato = true;
+				scacchiera[x + 1][y].GetComponent<GestCarta>().wiggle();
+				int[] cc = { x + 1, y };
+				return cc;
+			}
+		}
+		catch (Exception e) { }
+		try
+		{
+			if (scacchiera[x][y - 1].tag.Equals("mostro") && !scacchiera[x + 1][y].GetComponent<baseCarta>().fulminato)
+			{
+				scacchiera[x][y - 1].GetComponent<baseCarta>().togli1();
+				scacchiera[x + 1][y].GetComponent<baseCarta>().fulminato = true;
+				scacchiera[x + 1][y].GetComponent<GestCarta>().wiggle();
+				int[] cc = { x, y - 1 };
+				return cc;
+			}
+		}
+		catch (Exception e) { }
+		try
+		{
+			if (scacchiera[x - 1][y].tag.Equals("mostro") && !scacchiera[x + 1][y].GetComponent<baseCarta>().fulminato)
+			{
+				scacchiera[x - 1][y].GetComponent<baseCarta>().togli1();
+				scacchiera[x + 1][y].GetComponent<baseCarta>().fulminato = true;
+				scacchiera[x + 1][y].GetComponent<GestCarta>().wiggle();
+				int[] cc = { x - 1, y };
+				return cc;
+			}
+		}
+		catch (Exception e) { }
+		try
+		{
+			if (scacchiera[x][y + 1].tag.Equals("mostro") && !scacchiera[x + 1][y].GetComponent<baseCarta>().fulminato)
+			{
+				scacchiera[x][y + 1].GetComponent<baseCarta>().togli1();
+				scacchiera[x + 1][y].GetComponent<baseCarta>().fulminato = true;
+				scacchiera[x + 1][y].GetComponent<GestCarta>().wiggle();
+				int[] cc = { x, y + 1 };
+				return cc;
+			}
+		}
+		catch (Exception e) { }
+
+		return null;
 	}
 }

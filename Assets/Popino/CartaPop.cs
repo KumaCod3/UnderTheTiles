@@ -9,6 +9,8 @@ public class CartaPop: GestCarta
 	GameObject ali;
 	GameObject zanne;
 	GameObject lancia;
+	GameObject mago;
+	GameObject bo;
 
 
 	public void Start()
@@ -18,10 +20,14 @@ public class CartaPop: GestCarta
 		ali = gameObject.transform.GetChild(0).GetChild(5).gameObject;
 		zanne = gameObject.transform.GetChild(0).GetChild(6).gameObject;
 		lancia = gameObject.transform.GetChild(0).GetChild(7).gameObject;
+		mago = gameObject.transform.GetChild(0).GetChild(8).gameObject;
+		bo = gameObject.transform.GetChild(0).GetChild(9).gameObject;
 		scudo.SetActive(false);
 		ali.SetActive(false);
 		zanne.SetActive(false);
 		lancia.SetActive(false);
+		mago.SetActive(false);
+		bo.SetActive(false);
 	}
 
 	private void Update()
@@ -60,53 +66,37 @@ public class CartaPop: GestCarta
 					if (PopinoLivelli.abilita[i] == 1)
 					{
 						zanne.SetActive(true);
-						//if (PopinoLivelli.vampiro)
-						//{
-						//	zanne.GetComponent<Image>().color = on;
-						//}
-						//else
-						//{
-						//	zanne.GetComponent<Image>().color = off;
-						//}
 					}
 					else if (PopinoLivelli.abilita[i] == 2)
 					{
 						lancia.SetActive(true);
-						//if (PopinoLivelli.lancia)
-						//{
-						//	lancia.GetComponent<Image>().color = on;
-						//}
-						//else
-						//{
-						//	lancia.GetComponent<Image>().color = off;
-						//}
 					}
 					break;
 				case 2:
-					/*		if (PopinoLivelli.abilita[i] == 1)
-							{
-								boo.SetActive(true);
-								if (PopinoLivelli.boo)
-								{
-									boo.GetComponent<Image>().color = on;
-								}
-								else
-								{
-									boo.GetComponent<Image>().color = off;
-								}
-							}
-							else if (PopinoLivelli.abilita[i] == 2)
-							{
-								booboo.SetActive(true);
-								if (PopinoLivelli.booboo)
-								{
-									booboo.GetComponent<Image>().color = on;
-								}
-								else
-								{
-									bobooo.GetComponent<Image>().color = off;
-								}
-							}*/
+					if (PopinoLivelli.abilita[i] == 1)
+					{
+						mago.SetActive(true);
+						if (PopinoLivelli.mago)
+						{
+							mago.GetComponent<Image>().color = on;
+						}
+						else
+						{
+							mago.GetComponent<Image>().color = off;
+						}
+					}
+					else if (PopinoLivelli.abilita[i] == 2)
+					{
+						bo.SetActive(true);
+						if (PopinoLivelli.alchimista)
+						{
+							bo.GetComponent<Image>().color = on;
+						}
+						else
+						{
+							bo.GetComponent<Image>().color = off;
+						}
+					}
 					break;
 				default:
 					break;

@@ -24,7 +24,7 @@ public class CartaMostro3: baseCarta
 	public override void action()
 	{
 		base.action();
-		combat();
+		combat(false);
 	}
 
 	private void Update()

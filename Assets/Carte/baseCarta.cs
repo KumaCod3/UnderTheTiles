@@ -12,15 +12,38 @@ public abstract class baseCarta: MonoBehaviour
 	public string nomeSuono;
 	protected GameObject _pino;
 	public float speed = 1.5f;
+	bool onlyOne = true;
+	public bool fulminato;
 	public virtual void Start()
 	{
 		_pino = GameObject.FindWithTag("Player");
+		fulminato = false;
 	}
 	public virtual void action()
 	{
 		FindObjectOfType<AudioManager>().PlaySound(nomeSuono);
 	}
 
+	private void LateUpdate()
+	{
+		if (gameObject.tag.Equals("mostro"))
+		{
+			//if (vita <= 0 && onlyOne)
+			//{
+			//	onlyOne = false;
+			//	_pino.GetComponent<PopinoController>().camPun(GameManager.punti + punti);
+			//	gameObject.GetComponent<GestCarta>().die();
+			//	if (BoardManager.scacchiera[(int)gameObject.transform.position.y][(int)gameObject.transform.position.x] == null)
+			//	{
+			//		BoardManager.metVuot((int)gameObject.transform.position.y, (int)gameObject.transform.position.x);
+			//	}
+			//	if (PopinoLivelli.vampiro)
+			//	{
+			//		_pino.GetComponent<PopinoController>().camVita(_pino.GetComponent<PopinoController>().getVita() + 1);
+			//	}
+			//}
+		}
+	}
 	public abstract void ogniTurno();
 	public void disegna(int x, int y)
 	{
@@ -50,29 +73,28 @@ public abstract class baseCarta: MonoBehaviour
 		BoardManager.assegna(card, y, x);
 	}
 
-	public void combat()
+	public void combat(bool tr)
 	{
 		int vitaMostro = vita;
 		int vitapopo = _pino.GetComponent<PopinoController>().getVita();
 		while (vitaMostro > 0 && vitapopo > 0)
 		{
-			if (PopinoLivelli.lancia)
+			if (PopinoLivelli.lancia && !tr)
 			{
 				colpodietro();
 			}
 			vitaMostro = vitaMostro - _pino.GetComponent<PopinoController>().getAttacco();
 			vitapopo = vitapopo - attacco;
 		}
-		if (vitaMostro <= 0)
+
+		_pino.GetComponent<PopinoController>().camVita(vitapopo);
+		_pino.GetComponent<PopinoController>().camPun(GameManager.punti + punti);
+		gameObject.GetComponent<GestCarta>().die();
+		if (PopinoLivelli.vampiro && !tr)
 		{
-			_pino.GetComponent<PopinoController>().camVita(vitapopo);
-			_pino.GetComponent<PopinoController>().camPun(GameManager.punti + punti);
-			gameObject.GetComponent<GestCarta>().die();
-			if (PopinoLivelli.vampiro)
-			{
-				_pino.GetComponent<PopinoController>().camVita(_pino.GetComponent<PopinoController>().getVita() + 1);
-			}
+			_pino.GetComponent<PopinoController>().camVita(_pino.GetComponent<PopinoController>().getVita() + 1);
 		}
+
 	}
 
 	public IEnumerator scivola(Vector3 fin, float vel)
@@ -96,8 +118,7 @@ public abstract class baseCarta: MonoBehaviour
 		yield return scivolaTorna(Popino.dir, 7f, transform.position);
 		if (t)
 		{
-
-			combat();
+			combat(true);
 		}
 		else
 		{
@@ -108,6 +129,13 @@ public abstract class baseCarta: MonoBehaviour
 	{
 		vita--;
 		gameObject.GetComponent<GestCarta>().cambia1("" + vita, true);
+		if (vita <= 0 && onlyOne)
+		{
+			onlyOne = false;
+			BoardManager.metVuot((int)gameObject.transform.position.y, (int)gameObject.transform.position.x);
+			_pino.GetComponent<PopinoController>().camPun(GameManager.punti + punti);
+			gameObject.GetComponent<GestCarta>().die();
+		}
 	}
 
 	public void colpodietro()
